@@ -1,3 +1,3 @@
 # algorithms
-  here are some basic alforithms for coding  
+  here are some basic algorithms for coding  
 # ^_^
