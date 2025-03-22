@@ -2,7 +2,7 @@ import abc
 from datetime import datetime
 from collections import defaultdict
 
-# Base Device Class (Template)
+# Base Device Class 
 class Device(abc.ABC):
     def __init__(self, device_id, name, energy_usage=0,status='off'):
         # Initialize device attributes
@@ -31,22 +31,29 @@ class Device(abc.ABC):
     def set_name(self,new_name):
         if new_name == self.__name:
             print('The name has been duplicated!')
-            return
-        self.__name = new_name      #^
+            return 0
+        self.__name = str(new_name)      #^
         print('The new name has been set!!')
+        return 1
     
     def set_status(self,new_status): #原则上这个函数可以被复用，若真被复用，可体现
         if new_status not in ['on', 'off']:#!= 'on' or new_status != 'off':
-            return -1 #这里是否需要采用断言，我还没有想好       #^
+            print(f"Error: Invalid status '{new_status}'. Status must be 'on' or 'off'.")
+            return -1       #^
         if new_status == self.__status:
             print('The %s has already %s' % (self.__name,self.__status))
-            return
+            return 0
         self.__status = new_status
         print('The new status has been set!!')
-        return
+        return 1
 
     def set_id(self, new_id):       #^
-        assert False,'the device id can not change'
+        if new_id == self.__device_id:
+            print('The device id has been duplicated!')
+            return 0
+        self.__device_id = str(new_id)      #^
+        print('The new device id has been set!!')
+        return 1
     
     def set_schedule(self, command, time):
         self.__scheduled[0] = command
@@ -61,7 +68,7 @@ class Device(abc.ABC):
 
     def get_energy_usage(self): return self.__energy_usage      #^
 
-    def __str__(self): return 'Device:\t\t'+ self.get_name() + '\nID:\t\t'+ self.get_id() + '\nStatus:\t\t' + self.get_status() + '\nEnergy Usage:\t' + str(self.get_energy_usage()) + 'kWh\n\n'      #^
+    def __str__(self): return 'Device:\t\t\t'+ self.get_name() + '\nID:\t\t\t\t'+ self.get_id() + '\nStatus:\t\t\t' + self.get_status() + '\nEnergy Usage:\t' + str(self.get_energy_usage()) + 'kWh\n\n'      #^
 
 # Subclasses for devices        #^
 class Light(Device):
@@ -70,7 +77,6 @@ class Light(Device):
         self.__brightness = brightness
         if SmartHomeHub._instance is None: SmartHomeHub()
         SmartHomeHub._instance.controller.add_device(self)
-
 
 class Thermostat(Device):
     def __init__(self, device_id, name, temperature=22):
@@ -90,14 +96,13 @@ class Camera(Device):
 class DeviceController:
     def __init__(self): self.devices = {}
 
+    #
     def add_device(self, *device):
-        #print('\n')
         for dv in device: 
             if dv.get_id() in self.devices: pass#print(f"Device:{dv.get_name()} already exists!")
             else: 
                 self.devices[dv.get_id()] = dv
                 print(f"Device:{dv.get_name()} already set!")
-        #print('\n')
 
     def remove_device(self, device_id): 
         try:
@@ -106,14 +111,19 @@ class DeviceController:
             print(f"Device with ID {device_id} does not exist.")
 
     def list_devices(self):
+        if self.devices == {}:
+            print('No device at all!')
+            return -1
         print('all device(s):')
         for i in self.devices.values(): print(i.get_name())
+        return 0
 
     def execute_command(self, device_id, command, time = None): #####
         if time is not None: 
             self.devices[device_id].set_schedule(command, time)
-            return
+            return 1
         self.devices[device_id].set_status(command)
+        return 0
 
 # Smart Home Hub (Singleton)
 class SmartHomeHub:
@@ -128,10 +138,14 @@ class SmartHomeHub:
     def schedule_task(self, device_id, command, time = None): self.controller.execute_command(device_id,command, time)
 
     def display_status(self):
+        if self.controller.devices == {}:
+            print('No device at all!')
+            return -1
         print("Device's status:")
         for i in self.controller.devices.values():
-            print(i.get_name() ,'\t',i.get_status())
+            print(i.get_name() ,':\t',i.get_status())
             #if i.get_schedule_status is not None: print('Will be ',i.get_schedule_status,':\t',i.get_schedule_time)
+        return 0
 
     def total_energy_usage(self,s=0,ptr = None):
         if ptr is None:
@@ -144,7 +158,7 @@ class SmartHomeHub:
         # if ptr is None:ptr = iter(self._instance.controller.devices.values())
         # s = ptr.get_energy_usage + self.total_energy_usage(s,next(ptr))
 
-# Main Execution (Template)
+# Main Execution 
 if __name__ == "__main__":
     hub = SmartHomeHub()
 

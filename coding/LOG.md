@@ -36,7 +36,12 @@ __name的初始化和设置是否需要断言
   
 ## ROW43  
 这里是否需要采用断言，我还没有想好  
-与此同时，确实被复用了，同时将其复用的函数改变为一个私有函数
+与此同时，确实被复用了，同时将其复用的函数改变为一个私有函数  
+    这里根据ai，改动了return值，这样如果需要，可以直接在if当中调用函数，通过返回值判断属性改动状态。提供了一个接口，方便日后调用。  
+```py  
+a=input("Enter your new status:")  
+if(set_status(a)==1):print('new status has already been set')  
+```
   
 ## ROW51  
 如果这里不再需要断言，这需要给id一个数组，这样不仅可以记录过往的id，还可以通过哈希函数倒推过往的对象属性（如果实现了，则必须给数组设置长度，否者也会导致内存过度占用的问题）  
@@ -105,4 +110,17 @@ __name的初始化和设置是否需要断言
 │   └── src/  
 │       └── tracker.cpp  
 └── CMakeLists.txt  
-
+  
+## 增加defaultdirct的地方  
+    子class的__init__  
+    add_device  
+    remove device或许要，但也可以不改
+  
+## 实例化中遇到的一些问题  
+### 为什么在Light等子类里要SmartHomeHub._instance.controller.add_device(self)才不报错。而display_status（）函数中self.controller.devices.values()这么写即可  
+    这是因为 SmartHomeHub 类是一个单例模式（Singleton）的实现，SmartHomeHub._instance 是类级别的单例引用，而 self 是实例级别的引用。self 和 SmartHomeHub._instance 指向的是同一个对象  
+    因此，写成self.controller.devices.values()更符合oop要求  
+      
+    而在子类，这么写报错的原因：  
+    1、无法通过self引用（指向）SmartHomeHub._instance.  
+    2、在初始化的过程中，SmartHomeHub可能仍未实例化。
