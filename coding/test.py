@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from main87 import Light, Thermostat, Camera, DeviceController, SmartHomeHub
+from main import Light, Thermostat, Camera, DeviceController, SmartHomeHub
 
 class TestSmartHomeSystem(unittest.TestCase):
 

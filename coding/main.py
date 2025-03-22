@@ -1,6 +1,6 @@
 import abc
 from datetime import datetime
-#from collections import defaultdict
+from collections import defaultdict
 
 # Base Device Class (Template)
 class Device(abc.ABC):
@@ -10,7 +10,7 @@ class Device(abc.ABC):
         self.__name = name
         self.__status = status      #^
         self.__energy_usage = energy_usage
-        self.__scheduled = [None, None]
+        self.__scheduled = [None, None]     #the first position is scheduled time, and the second one is operation.
 
     # Getter methods
     def get_id(self): return self.__device_id

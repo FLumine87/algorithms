@@ -71,11 +71,38 @@ __name的初始化和设置是否需要断言
 可以把部分很恶心的函数写成重载，^_^  
   
 ### 引用2  
-datetime
+    datetime
 >https://docs.python.org/3/library/datetime.html  
 >https://schedule.readthedocs.io/en/stable/
-iterator  
+    iterator  
 >https://docs.python.org/3/library/stdtypes.html#iterator-types  
+    defaultdict  
+>https://docs.python.org/3/library/collections.html#collections.defaultdict
   
 ## display_status  
-无法读取__schedule
+无法读取__schedule  
+  
+## schedule库  
+虽然没有说要用，  
+这是一个轻量级的库，用来管理schedule。可以在特定的时间，执行某一方法。  
+>https://schedule.readthedocs.io/en/stable/  
+  
+### treading库  
+用来管理多线程的一个库。
+    使用threading.Timer创建定时器，并在后台指定时间运行  
+    定时器在单独线程运行，不阻塞主线程  
+>https://docs.python.org/3/library/threading.html  
+  
+
+由于assignme中并没有说完成该子方法，如果在项目中需要更好的完成该方法，可以在子类中overriding，以满足更好的个性化实现子类的定时开关要求  
+  
+## 项目结构  
+>rm_auto_aim-main/  
+├── armor_tracker/  
+│   ├── include/  
+│   │   └── armor_tracker/  
+│   │       └── tracker.hpp  
+│   └── src/  
+│       └── tracker.cpp  
+└── CMakeLists.txt  
+
