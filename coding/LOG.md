@@ -123,4 +123,34 @@ if(set_status(a)==1):print('new status has already been set')
       
     而在子类，这么写报错的原因：  
     1、无法通过self引用（指向）SmartHomeHub._instance.  
-    2、在初始化的过程中，SmartHomeHub可能仍未实例化。
+    2、在初始化的过程中，SmartHomeHub可能仍未实例化。  
+
+```c
+static PyObject *
+defaultdict_missing(defaultdictobject *dd, PyObject *key)
+{
+    PyObject *factory = dd->default_factory;
+//提取对象，factory是默认值
+    if (factory == NULL) {
+        PyErr_SetObject(PyExc_KeyError, key);
+        return NULL;
+    }//无默认值，大抵就是不存在列表则返回报错
+
+    PyObject *value = PyObject_CallNoArgs(factory);  // 调用默认工厂函数
+    if (value == NULL) {
+        return NULL;
+    }
+
+    if (PyDict_SetItem((PyObject *)dd, key, value) < 0) {
+        Py_DECREF(value);
+        return NULL;
+    }//通过返回值判断是否需要加入
+
+    return value;
+}
+```  
+>https://github.com/python/cpython/blob/main/Modules/_collectionsmodule.c
+    这一段就很好说明了通过返回值判断是否已经存在键值对。  
+    不过上面写的注释不太对  
+  
+对于defaultdict的问题，由于defaultdict的主要作用是调用不存在的键时，会自动生成一个默认值并且返回。他带来太高代码可读性，更满足ood的同时，也带来了，可能因过度调用而污染字典的问题，需要额外维护字典，得不偿失。

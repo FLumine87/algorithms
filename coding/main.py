@@ -94,7 +94,7 @@ class Camera(Device):
 
 # Device Controller
 class DeviceController:
-    def __init__(self): self.devices = {}
+    def __init__(self):self.devices = {}#self.defaultdevice = defaultdict()
 
     #
     def add_device(self, *device):
