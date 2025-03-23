@@ -153,4 +153,14 @@ defaultdict_missing(defaultdictobject *dd, PyObject *key)
     这一段就很好说明了通过返回值判断是否已经存在键值对。  
     不过上面写的注释不太对  
   
-对于defaultdict的问题，由于defaultdict的主要作用是调用不存在的键时，会自动生成一个默认值并且返回。他带来太高代码可读性，更满足ood的同时，也带来了，可能因过度调用而污染字典的问题，需要额外维护字典，得不偿失。
+对于defaultdict的问题，由于defaultdict的主要作用是调用不存在的键时，会自动生成一个默认值并且返回。他带来太高代码可读性，更满足ood的同时，也带来了，可能因过度调用而污染字典的问题，需要额外维护字典，得不偿失。  
+  
+>Device:			Living Room Light
+ID:				L1
+Status:			off
+Energy Usage:	0kWh
+
+ has already been deleted  
+   
+更改后：  
+>Living Room Light has already been deleted

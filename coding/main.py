@@ -106,7 +106,7 @@ class DeviceController:
 
     def remove_device(self, device_id): 
         try:
-            print(f'{self.devices.pop(device_id)} has already been deleted' )
+            print(f'{self.devices.pop(device_id).get_name()} has already been deleted' )
         except KeyError:
             print(f"Device with ID {device_id} does not exist.")
 
