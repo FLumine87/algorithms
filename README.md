@@ -1,6 +1,5 @@
 # algorithms
   here are some basic algorithms for coding  
-
 #   ^_^  
 
 ## 3.26  
