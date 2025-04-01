@@ -1,6 +1,6 @@
 import abc
 from datetime import datetime
-from collections import defaultdict
+from collections import defaultdict #Not adopted
 
 # Base Device Class 
 class Device(abc.ABC):
@@ -37,7 +37,7 @@ class Device(abc.ABC):
         return 1
     
     def set_status(self,new_status): #原则上这个函数可以被复用，若真被复用，可体现
-        if new_status not in ['on', 'off']:#!= 'on' or new_status != 'off':
+        if new_status not in ['on', 'off']:#correctness check
             print(f"Error: Invalid status '{new_status}'. Status must be 'on' or 'off'.")
             return -1       #^
         if new_status == self.__status:
@@ -75,8 +75,8 @@ class Light(Device):
     def __init__(self, device_id, name, brightness=100):
         super().__init__(device_id,name)
         self.__brightness = brightness
-        if SmartHomeHub._instance is None: SmartHomeHub()
-        SmartHomeHub._instance.controller.add_device(self)
+        if SmartHomeHub._instance is None: SmartHomeHub()#correctness check
+        SmartHomeHub._instance.controller.add_device(self)#add the new device to the dictionary automatically
 
 class Thermostat(Device):
     def __init__(self, device_id, name, temperature=22):
