@@ -83,7 +83,8 @@ if(set_status(a)==1):print('new status has already been set')
 >https://docs.python.org/3/library/stdtypes.html#iterator-types  
     defaultdict  
 >https://docs.python.org/3/library/collections.html#collections.defaultdict
-  
+>https://docs.python.org/zh-cn/3/library/unittest.html  
+
 ## display_status  
 无法读取__schedule  
   
@@ -110,6 +111,15 @@ if(set_status(a)==1):print('new status has already been set')
 │   └── src/  
 │       └── tracker.cpp  
 └── CMakeLists.txt  
+
+>main/  
+├── system/  
+│   ├── include/  
+│   │   └── device1.py/  
+│   │   └── device2.py/  
+│   └── src/  
+│       └── main.py  
+└── CMakeLists.txt(dependency)  
   
 ## 增加defaultdirct的地方  
     子class的__init__  
@@ -185,4 +195,53 @@ C++ 支持多种编程范式（面向过程、面向对象、泛型等），但�
 ### 7  
 jc1503，9-2，11，12页有图  
 ### 8  
-hub就很像adaptor
+hub就很像adaptor  
+  
+# 测试样例  
+add_devices1  
+```py  
+    def test_singleton():
+        hub1 = SmartHomeHub()
+        hub2 = SmartHomeHub()
+        print(f"hub1 id:\t{id(hub1)}\nhub2 id:\t{id(hub2)}")
+        assert hub1 is hub2, "SmartHomeHub is not a singleton!"
+        print("SmartHomeHub is a singleton!")  
+
+    # Add devices
+    hub.controller.add_device(Light('L1', 'Living_Room_Light'), 
+    Thermostat('T1', 'Home_Thermostat'), 
+    Camera('C1', 'Front_Foor_Cemera'))
+    #Error Detection
+    hub.controller.add_device('L1')
+
+    # Display devices
+    hub.controller.list_devices()
+
+    # Execute commands
+    hub.controller.execute_command('L1','on')
+    hub.controller.execute_command('T1','off')
+    #Error Detection
+    hub.controller.execute_command('C2','off')
+    hub.controller.execute_command('C1','hello')
+
+    # Schedule tasks
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    hub.schedule_task('C1', 'on', current_time)
+
+    # Display status
+    hub.display_status()
+
+    # Calculate and print total energy usage
+    print(f"Total Energy Usage: {hub.total_energy_usage()} kWh")
+
+    # Remove device
+    hub.controller.remove_device('L1')
+    hub.controller.remove_device('T1')
+    hub.controller.remove_device('C1')
+    #Error Detection
+    hub.controller.remove_device('C2')
+
+    # Is Singleton
+    test_singleton()
+```  
+  
