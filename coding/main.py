@@ -25,7 +25,7 @@ class Device(abc.ABC):
 
     def get_schedule_time(self): return self.__scheduled[1]
 
-    # Setting methods       #^
+    # Setting methods       #Provide return value for easy viewing of function status
     def set_energy_usage(self,new_usage): 
         if not str(new_usage).isdigit(): # correctness check
             print(f"Error: Invalid energy usage '{new_usage}'. New energy usage must be a number.")
