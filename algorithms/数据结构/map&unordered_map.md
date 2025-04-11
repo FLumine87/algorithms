@@ -7,8 +7,6 @@
 | `unordered_map()`                      | 创建一个空的 `unordered_map`。                               |
 | `map(const map& other)`                | 拷贝构造函数，创建一个与 `other` 相同的 `map`。              |
 | `unordered_map(const unordered_map& other)` | 拷贝构造函数，创建一个与 `other` 相同的 `unordered_map`。   |
-| `map(initializer_list<pair<const Key, T>> init)` | 使用初始化列表创建一个 `map`。                              |
-| `unordered_map(initializer_list<pair<const Key, T>> init)` | 使用初始化列表创建一个 `unordered_map`。                   |
 
 ---
 
