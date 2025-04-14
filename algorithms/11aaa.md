@@ -288,3 +288,105 @@ d = Dog()
 d.speak()
 ```  
   
+在Python中，装饰器（修饰器）是一种强大的工具，它可以在不修改原函数代码的情况下，对函数或类进行扩展和增强。以下为你介绍一些常见的修饰器：
+
+## 内置装饰器
+#### 1. `@staticmethod`
+- **作用**：将类中的方法转换为静态方法。静态方法不需要实例化类就可以调用，它不依赖于类的实例，也没有`self`或`cls`参数。
+- **示例代码**：
+```python
+class MathUtils:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+# 可以直接通过类名调用静态方法
+result = MathUtils.add(3, 5)
+print(result)
+```
+#### 2. `@classmethod`
+- **作用**：将类中的方法转换为类方法。类方法的第一个参数通常是`cls`，代表类本身，类方法可以通过类名或实例调用。
+- **示例代码**：
+```python
+class Person:
+    count = 0
+
+    def __init__(self):
+        Person.count += 1
+
+    @classmethod
+    def get_count(cls):
+        return cls.count
+
+p1 = Person()
+p2 = Person()
+# 可以通过类名调用类方法
+print(Person.get_count())
+```
+#### 3. `@property`
+- **作用**：将类中的方法转换为属性，使得可以像访问属性一样调用方法，同时还可以为属性设置`setter`和`deleter`方法。
+- **示例代码**：
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        if value < 0:
+            raise ValueError("Radius cannot be negative")
+        self._radius = value
+
+c = Circle(5)
+# 像访问属性一样调用方法
+print(c.radius)
+c.radius = 10
+print(c.radius)
+```
+
+### 自定义装饰器
+#### 1. 简单的函数装饰器
+- **作用**：用于记录函数的执行时间。
+- **示例代码**：
+```python
+import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Function {func.__name__} took {end_time - start_time} seconds to execute.")
+        return result
+    return wrapper
+
+@timer_decorator
+def my_function():
+    time.sleep(2)
+
+my_function()
+```
+#### 2. 带参数的装饰器
+- **作用**：可以根据传入的参数来定制装饰器的行为。
+- **示例代码**：
+```python
+def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator
+
+@repeat(3)
+def say_hello():
+    print("Hello!")
+
+say_hello()
+```
+
