@@ -255,4 +255,36 @@ print(cart.calculate_total(original_price))
 cart.set_strategy(fixed_amount_discount)
 print(cart.calculate_total(original_price))
 
-```
+```  
+  
+## __new__&__init__
+ - `__new__` 方法是类的构造方法，用于创建类的实例并返回它，是在实例创建之前被调用的静态方法。它的第一个参数是类本身（cls） ，主要负责对象的创建。
+ - `__init__` 方法是实例的初始化方法，在`__new__`返回实例对象后被调用，第一个参数是实例对象（self），主要用于对新创建的实例进行初始化设置，比如给实例属性赋值 。例如：
+```python
+class Test:
+    def __new__(cls):
+        print('__new__ method is called')
+        return super().__new__(cls)
+    def __init__(self):
+        print('__init__ method is called')
+        self.attr = 10
+t = Test()
+``` 
+执行上述代码，先输出`__new__ method is called`，再输出`__init__ method is called`，说明`__new__`方法先被调用用于创建对象，然后`__init__`方法被调用用于初始化对象属性。   
+  
+## super()  
+判断题第5题内容是 “The super() function in Python is used to call a method from the parent class.”，答案是True。在Python中，`super()`函数用于调用父类（超类）的方法，能在子类中复用父类的方法，优化代码，避免重复编写。例如：
+```python
+class Animal:
+    def speak(self):
+        print("I'm an animal.")
+
+class Dog(Animal):
+    def speak(self):
+        super().speak()
+        print("I'm a dog and I bark.")
+
+d = Dog()
+d.speak()
+```  
+  
