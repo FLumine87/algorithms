@@ -21,9 +21,12 @@
 | implementation          | 实施，工具         |  
 | exposing          | 暴露         |  
 | interfaces          | 接口         |  
-| aaaa          | 1111         |  
-| aaaa          | 1111         |  
-| aaaa          | 1111         |  
+| module          | 模块         |  
+| default value          | 缺省值         |  
+| efficient          | 有效率的         |  
+| initialization       | 初始化       |  
+| storage          | 存储         |  
+| traverse          | 遍历         |  
 | aaaa          | 1111         |  
   
 
@@ -486,6 +489,63 @@ class MyClass:
 
 ```
   
+  
+## 一些奇怪的关键字  
+
+### 1. `await`
+- **功能**：`await` 是 Python 异步编程里的关键字，用于暂停异步函数的执行，等待一个可等待对象（像 `asyncio.Future`、`asyncio.Task` 或者另一个异步生成器）执行完毕，之后再继续执行。
+- **示例代码**：
+```python
+import asyncio
+
+async def async_function():
+    print("开始执行异步函数")
+    await asyncio.sleep(1)
+    print("异步函数执行完毕")
+
+async def main():
+    await async_function()
+
+asyncio.run(main())
+```
+- **解释**：在 `async_function` 中，`await asyncio.sleep(1)` 会暂停函数执行 1 秒，等这 1 秒过去后再接着执行后续代码。
+
+### 2. `async`
+- **功能**：`async` 用来定义异步函数或者异步生成器。以 `async` 定义的函数是异步函数，调用时不会马上执行，而是返回一个协程对象。
+- **示例代码**：
+```python
+import asyncio
+
+async def async_task():
+    print("执行异步任务")
+    await asyncio.sleep(2)
+    print("异步任务完成")
+
+async def main():
+    task = async_task()
+    await task
+
+asyncio.run(main())
+```
+- **解释**：`async def async_task()` 定义了一个异步函数，`main` 函数里调用 `async_task()` 得到一个协程对象，然后用 `await` 来执行这个协程。
+
+
+### 3. `yield`
+`yield` 关键字用于定义生成器函数。生成器函数在调用时不会立即执行，而是返回一个生成器对象。每次调用生成器的 `__next__()` 方法，函数会执行到 `yield` 语句处并暂停，同时返回 `yield` 后面的值。示例如下：
+```python
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+gen = my_generator()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+```
+
+
+  
 
 ## 问答题  
   
@@ -497,4 +557,87 @@ OOP stands for Object - Oriented Programming. It is a programming paradigm that 
  - **Polymorphism**: Polymorphism enables different objects to respond differently to the same message. 
  - **Abstraction**: Abstraction is about simplifying complex systems by hiding unnecessary details and showing only the essential features. 
 
-Over all, OOP provides a modular, organized, and extensible way of programming. 
+Over all, OOP provides a modular, organized, and extensible way of programming.   
+  
+
+### 类与对象的区别  
+A class and an object are fundamental concepts in object - oriented programming (OOP), and they have the following differences:
+- **Definition and Nature**: A class is a template for creating objects. It defines a set of attributes (data) and methods (functions).After class instance, it becomes an object
+ - **Memory Allocation**: When a class is defined, no memory is allocated for the data members of the class.In Python, objects always occupy memory space  
+  
+  
+## 须知  
+  
+下面是Python OOP的一些考试范围和复习建议：
+一、知识点类（选择、判断类小题为主，自行斟酌复习程度）
+1、OOP技术的主要优势（与结构化编程相比）  
+2、OOP中继承、封装、多态的概念  
+3、子类继承父类后，父类中被override的方法和未被override的方法，从子类对象调用时有哪些情况？  
+4、<u>Python中哪个方法用于访问父类？使用场景是这样的？</u>  
+5、类方法（class method）的概念，类与对象间的关系（object is an instance of a class）。    
+>在面向对象编程里，类方法是绑定到类而非类实例的方法。  
+  
+
+6、Python中定义一个类的正确方法/语法。  
+7、Python中的构造函数(constructors)，即__init__的概念、使用场景。  
+8、Python中全局命名空间（global namespace）的作用/目的是什么？  
+> 在 Python 里，命名空间是一种管理变量和函数名称的机制，它规定了名称的可见范围和作用域。全局命名空间（global namespace）是 Python 中一个重要的命名空间，下面为你详细介绍它的作用和目的。  
+**存储全局变量和函数**  
+全局命名空间用于存储在模块级别定义的变量和函数，这些变量和函数在整个模块中都可以被访问。全局变量和函数在程序运行期间始终存在，除非被显式删除或程序结束。  
+**模块间的数据共享**  
+在 Python 中，每个模块都有自己的全局命名空间。不同模块之间可以通过导入模块的方式访问其他模块的全局命名空间中的变量和函数，从而实现模块间的数据共享。  
+**示例代码**  
+```python
+# module1.py
+global_variable = 20
+
+def global_function():
+    print("这是 module1 中的全局函数")
+
+# module2.py
+import module1
+
+# 访问 module1 中的全局变量和函数
+print(module1.global_variable)
+module1.global_function()
+
+```  
+  
+9、递归函数中的base case的定义、作用。 
+>base case（基例，也被称为基本情况或终止条件）base case 指的是递归函数里能够直接得出结果，无需再进行递归调用的情况.。  
+>1. 避免无限递归  
+>2.  确保函数的正确性  
+>3. 简化问题的求解过程  
+  
+10、双链表（doubly-linked list）相比单链表（singly-linked list）的优势是什么？  
+> 1. 双向遍历  
+> 2. 节点删除和插入操作更高效（特定场景）  
+> 3. 实现某些算法更方便:双链表的双向指针使得实现这些算法更加方便，例如实现双向队列（deque）、LRU（Least Recently Used）缓存算法等。在这些算法中，需要频繁地在链表的头部和尾部进行插入和删除操作，以及访问节点的前一个节点  
+> 4. 数据回溯更容易  
+  
+11、Python文件处理的相关函数（open()、close()）、常用符号('w','r')、模式（with open() as f:）.  
+12、队列和栈的访问特性（哪个是先进先出，那个是后进先出）。  
+13、二叉搜索树中搜索一个元素的最好时间复杂度如何推导？  
+14、树的遍历策略：前序、中序、后序、分层。  
+15、哪个数据结构适合用于实现一个文本编辑器中的undo操作？（考虑现行结构，比如队列、栈、链表等）。  
+16、Python的异常处理（exception handling）方法。  
+17、如果使用Pickle库将一个Python对象串行化。  
+18、OOP中UML的作用/目标。  
+19、常见设计模式的使用场景（Adapter, Factory, Singleton, Strategy）。(我个人认为OOP课程直接讲设计模式，是过度抽象的。因此，这个问题，重点理解单例模式)  
+20、Python迭代器（iterator）的基本操作，尤其是next()方法。  
+21、Python装饰器（decorator）的基本操作，尤其是@staticmethod的作用。  
+22、Python代码的风格，Pythonic代码的内涵、特征。（我没有OOP的PPT,以前有学生发过我没保存，我猜这个问题PPT肯定有）  
+23、区分几个缩写，MVC（Model-View-Control）、LIFO（Last-In First-Out）、FIFO(First-In First-Out)、DFS（Depth-First Search）。如果问Web设计用哪个设计模式，你怎么答？（这个问题，其实是考智商的吧，四个名词，只有一个是设计模式，答错的话，能怎么解释？）  
+24、在版本控制中，Git的作用是什么？  
+25、多态如何实现不同子类同一个函数的多重不同实现？  
+26、继承机制能否允许子类直接修改父类的私有成员？  
+27、一个类是否可以有多个带不同参数的构造函数？  
+28、在OOP里this关键字的含义、使用场景。
+
+二、关键概念（可能会做概念名称与表述的匹配）
+Class, Object, Attribute, Interface, Method, Encapsulation, Inheritance, Polymorphism, Abstraction
+
+三、概念对比：method overloading和method overriding的区别。试举例。
+
+四、算法：
+二叉搜索树（构建、元素插入操作、元素删除操作、前序遍历、中序遍历、后序遍历、广度优先搜索、深度优先搜索）。
