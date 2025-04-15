@@ -17,6 +17,12 @@
 | invoke          | 调用         |  
 | association          | 关联         |  
 | composition          | 组成         |  
+| paradigm          | 范式         |  
+| implementation          | 实施，工具         |  
+| exposing          | 暴露         |  
+| interfaces          | 接口         |  
+| aaaa          | 1111         |  
+| aaaa          | 1111         |  
 | aaaa          | 1111         |  
 | aaaa          | 1111         |  
   
@@ -389,4 +395,106 @@ def say_hello():
 
 say_hello()
 ```
+  
+在 Python 里，抽象修饰器和抽象类、抽象方法关联紧密，主要借助 `abc`（Abstract Base Classes） 模块中的 `@abstractmethod` 与 `@abstractclassmethod`、`@abstractstaticmethod`、`@abstractproperty` 等修饰器来定义抽象类和抽象方法。下面为你详细介绍：
 
+### 核心概念
+- **抽象类**：不能被实例化的类，主要用于为子类提供统一的接口和规范。
+- **抽象方法**：仅包含方法声明，没有具体实现的方法，子类必须实现这些抽象方法。
+
+### 常用抽象修饰器及示例
+
+#### 1. `@abstractmethod`
+- **作用**：把类的方法标记为抽象方法，含有抽象方法的类就是抽象类，不能被实例化。
+- **示例代码**：
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+# 尝试实例化抽象类会报错
+# s = Shape()  
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+
+rect = Rectangle(5, 3)
+print(rect.area())
+print(rect.perimeter())
+```
+在上述代码中，`Shape` 类是抽象类，`area` 和 `perimeter` 是抽象方法。`Rectangle` 类继承自 `Shape` 类，并且实现了抽象方法，所以可以实例化。
+
+#### 2. `@abstractclassmethod 等`
+- **作用**：将类方法标记为抽象类方法，子类必须实现该抽象类方法。
+- **示例代码**：
+```python
+from abc import ABC, abstractclassmethod
+
+class Animal(ABC):
+    @abstractclassmethod
+    def speak(cls):
+        pass
+
+class Dog(Animal):
+    @classmethod
+    def speak(cls):
+        print("Woof!")
+
+
+Dog.speak()
+```
+这里 `Animal` 类的 `speak` 是抽象类方法，`Dog` 类继承 `Animal` 类并实现了该方法。
+
+### 抽象修饰器的用途
+- **规范接口**：抽象类和抽象方法为子类提供了统一的接口，确保子类实现必要的方法，增强了代码的规范性和可维护性。
+- **提高代码复用性**：通过抽象类可以定义通用的行为和属性，子类可以继承并扩展这些功能，减少代码重复。   
+  
+### @staticmethod和@classmethod的区别  
+
+#### 语法及参数
+- **`@staticmethod`**：将一个方法转换为静态方法，静态方法不需要传入特殊的参数，它不依赖于类或实例的状态。静态方法的定义与普通函数类似，只是它位于类的命名空间中。
+- **`@classmethod`**：将一个方法转换为类方法，类方法的第一个参数通常命名为 `cls`，它代表类本身。通过 `cls` 参数，类方法可以访问和修改类的属性。
+
+以下是一个简单的示例代码，展示了两者在语法和参数上的区别：
+```python
+class MyClass:
+    class_variable = 10
+
+    @staticmethod
+    def static_method():
+        print("This is a static method.")
+
+    @classmethod
+    def class_method(cls):
+        print(f"This is a class method. Class variable: {cls.class_variable}")
+
+```
+  
+
+## 问答题  
+  
+### What is OOP  
+  
+OOP stands for Object - Oriented Programming. It is a programming paradigm that organizes software design around objects. Here are its main characteristics:
+- **Encapsulation**: It hides the internal implementation details of an object and only exposing necessary interfaces to the outside.
+ - **Inheritance**: Inheritance allows a class (subclass) to inherit attributes and methods from another class (superclass). This promotes code reuse. 
+ - **Polymorphism**: Polymorphism enables different objects to respond differently to the same message. 
+ - **Abstraction**: Abstraction is about simplifying complex systems by hiding unnecessary details and showing only the essential features. 
+
+Over all, OOP provides a modular, organized, and extensible way of programming. 
