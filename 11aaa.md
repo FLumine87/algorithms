@@ -266,7 +266,7 @@ print(cart.calculate_total(original_price))
 
 ```  
   
-## __new__&__init__
+## new&init
  - `__new__` 方法是类的构造方法，用于创建类的实例并返回它，是在实例创建之前被调用的静态方法。它的第一个参数是类本身（cls） ，主要负责对象的创建。
  - `__init__` 方法是实例的初始化方法，在`__new__`返回实例对象后被调用，第一个参数是实例对象（self），主要用于对新创建的实例进行初始化设置，比如给实例属性赋值 。例如：
 ```python
@@ -555,10 +555,20 @@ OOP stands for Object - Oriented Programming. It is a programming paradigm that 
 - **Encapsulation**: It hides the internal implementation details of an object and only exposing necessary interfaces to the outside.
  - **Inheritance**: Inheritance allows a class (subclass) to inherit attributes and methods from another class (superclass). This promotes code reuse. 
  - **Polymorphism**: Polymorphism enables different objects to respond differently to the same message. 
- - **Abstraction**: Abstraction is about simplifying complex systems by hiding unnecessary details and showing only the essential features. 
+ - **Abstraction**: Abstraction is about simplifying complex systems by hiding unnecessary details and showing only the essential features.   
+ - **interactiveness**：Program execution involves the delivery of messages between objects.
 
 Over all, OOP provides a modular, organized, and extensible way of programming.   
   
+### What is OOA  
+In Python, OOA stands for Object-Oriented Analysis, which is a crucial part of the software development process. Its main objective is to analyze and understand the problem domain using object-oriented concepts and methods, and then construct an object-oriented model of the problem domain. The following is a detailed introduction to OOA:
+
+**Analysis Steps**
+1. **Identify Objects and Classes**: Identify the key objects and classes from the problem domain.  
+2. **Determine the Attributes and Methods of Objects**: Define the corresponding attributes and methods for each class.   
+3. **Analyze the Relationships between Classes**: Determine the relationships between classes, such as inheritance, association, aggregation, etc.   
+4. **Build an Object Model**: Use tools such as UML (Unified Modeling Language) to build an object model, intuitively representing classes, objects, and the relationships between them.
+
 
 ### 类与对象的区别  
 A class and an object are fundamental concepts in object - oriented programming (OOP), and they have the following differences:
