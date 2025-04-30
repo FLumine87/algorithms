@@ -24,11 +24,11 @@ public:
 
         // 定时器，每秒发布一次图片
         timer_i = this->create_wall_timer(
-            std::chrono::seconds(5),
+            std::chrono::seconds(3),
             std::bind(&ImgNode::publish_image, this));
 
         // 读取图片
-        gbr_img = cv::imread("/home/flumine/ROS2_test/ws1/src/test2/image/test_image.jpg", cv::IMREAD_COLOR);
+        gbr_img = cv::imread("/home/flumine/ROS2_test/ws1/src/test2/image/test_image4.jpg", cv::IMREAD_COLOR);
         if (gbr_img.empty())
         {
             RCLCPP_ERROR(this->get_logger(), "Failed to read image");
@@ -49,8 +49,13 @@ private:
 
         b_img = preprocessImage(gbr_img);
         // 转换为 ROS 2 的 Image 消息
-        // auto msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", b_img).toImageMsg();
-        // publisher_i->publish(*msg);
+        auto msg = cv_bridge::CvImage(std_msgs::msg::Header(), "mono8", b_img).toImageMsg();
+        publisher_i->publish(*msg);
+
+        //test
+        // cv::imshow("binary Image", b_img);
+        // cv::waitKey(3000);
+        // cv::destroyWindow("binary Image");
 
         RCLCPP_INFO(this->get_logger(), "Published an image");
     }
@@ -61,7 +66,7 @@ private:
       cv::cvtColor(rgb_img, gray_img, cv::COLOR_RGB2GRAY);
     
       cv::Mat binary_img;
-      cv::threshold(gray_img, binary_img, 125, 255, cv::THRESH_BINARY);
+      cv::threshold(gray_img, binary_img, 26, 255, cv::THRESH_BINARY);
     
       return binary_img;
     }

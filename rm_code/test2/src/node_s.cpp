@@ -24,7 +24,7 @@ private:
     void topic_callback(const sensor_msgs::msg::Image::SharedPtr msg)
     {
         // 将 ROS 2 的 Image 消息转换为 OpenCV 的 Mat
-        cv::Mat image_d = cv_bridge::toCvCopy(msg, "bgr8")->image;
+        cv::Mat image_d = cv_bridge::toCvCopy(msg, "mono8")->image;
         RCLCPP_INFO(this->get_logger(), "binary image.Counts: %d",count++);
 
         // 显示图片
