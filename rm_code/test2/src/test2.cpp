@@ -181,7 +181,7 @@ private:
             };
 
             if (isLight(light)) {
-                auto rect = light;
+                vector<rm_auto_aim::Light> rect = light;
                 if (  // Avoid assertion failed
                     0 <= rect.x && 0 <= rect.width && rect.x + rect.width <= rgb_img.cols && 0 <= rect.y &&
                     0 <= rect.height && rect.y + rect.height <= rgb_img.rows) {
