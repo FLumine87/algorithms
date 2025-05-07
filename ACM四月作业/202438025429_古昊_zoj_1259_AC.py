@@ -1,7 +1,7 @@
 import sys
 
 
-first_case = True
+first_case = False
 line = sys.stdin.readline()
 while True:
     # line = sys.stdin.readline()
@@ -10,10 +10,8 @@ while True:
     L = int(line.strip())
     if L == 0:
         break
-    if not first_case:
+    if first_case:
         print()
-    first_case = False
-    
     q1 = list(range(1, L+1))
     first_answer = True
     
@@ -48,7 +46,8 @@ while True:
         print("Yes" if valid else "No")
         first_answer = False 
     line = sys.stdin.readline()
-    if L != 0:print()
+    L = int(line.strip())
+    if line != 0:print()
 
 
 

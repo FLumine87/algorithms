@@ -1,16 +1,17 @@
 ## 四月题目
-- [ ] zoj 1008
-- [ ] bailian 2503
+- [ ] zoj 1008 ?
+- [x] bailian 2503
 - [x] zoj 1094
-- [ ] zoj 1259
-- [ ] zoj 1423
-- [ ] zoj 2483
-- [ ] zoj 1016
-- [ ] zoj 3210
-- [ ] zoj 2212
-- [ ] zoj 2724
+- [x] zoj 1259
+- [ ] zoj 1423 ?
+- [ ] zoj 2483 ?
+- [ ] zoj 1016 ?
+- [x] zoj 3210
+- [ ] zoj 2212 ?
+- [x] zoj 2724
 - [x] zoj 1117
-- [ ] bailian 4080
+- [ ] bailian 4080 ?
 - [ ] poj 3253
 - [x] zoj 1789
-- [ ] zoj 2833
+- [ ] zoj 2833 ?
+- [x] bailian 2418

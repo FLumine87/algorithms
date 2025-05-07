@@ -1,72 +1,61 @@
-matrix = {}
+from typing import Dict, Tuple
 
-def solve(s):
+def solve(s: str, matrix: Dict[str, Tuple[int, int]]) -> None:
     if len(s) == 1:
         print(0)
         return
-
-    ans = 0
-    pos = 0
-
-    def is_p():
-        nonlocal pos, ans
-        tmp = [None, None]
-
-        if pos >= len(s):
-            return (-1, -1)
-
-        if s[pos] == '(':
-            pos += 1
-            tmp[0] = is_p()
-            if tmp[0] == (-1, -1):
-                return (-1, -1)
-        else:
-            if s[pos] not in matrix:
-                return (-1, -1)
-            tmp[0] = matrix[s[pos]]
-            pos += 1
-
-        if s[pos] == '(':
-            pos += 1
-            tmp[1] = is_p()
-            if tmp[1] == (-1, -1):
-                return (-1, -1)
-        else:
-            if s[pos] not in matrix:
-                return (-1, -1)
-            tmp[1] = matrix[s[pos]]
-            pos += 1
-
-        if pos >= len(s) or s[pos] != ')':
-            return (-1, -1)
-        pos += 1
-
-        if tmp[0][1] != tmp[1][0]:
-            return (-1, -1)
-
-        # 计算矩阵乘法的代价
-        ans += tmp[0][0] * tmp[0][1] * tmp[1][1]
-        return (tmp[0][0], tmp[1][1])
-
-    res = is_p()
-    if res[0] == -1:
+    
+    stack = []
+    total = 0
+    
+    for c in s:
+        if c == '(':
+            stack.append(c)
+        elif c.isalpha():
+            stack.append(matrix[c])
+        elif c == ')':
+            temp = []
+            while stack and stack[-1] != '(':
+                temp.append(stack.pop())
+            if not stack:
+                print("error")
+                return
+            stack.pop()  # 弹出左括号
+            
+            temp.reverse()
+            if len(temp) < 2:
+                print("error")
+                return
+            
+            # 计算矩阵链乘法
+            current = temp[0]
+            for mat in temp[1:]:
+                if current[1] != mat[0]:
+                    print("error")
+                    return
+                total += current[0] * current[1] * mat[1]
+                current = (current[0], mat[1])
+            stack.append(current)
+    
+    if len(stack) != 1 or isinstance(stack[0], str):
         print("error")
-    else:
-        print(ans)
+        return
+    print(total)
 
-T = int(input())
-for _ in range(T):
+n = int(input())
+matrix_info: Dict[str, Tuple[int, int]] = {}
+for _ in range(n):
     c, a, b = input().split()
-    matrix[c] = (int(a), int(b))
+    matrix_info[c] = (int(a), int(b))
 
-while True:
-    try:
-        s = input()
-        if not s.strip():
-            break
-        solve(s)
-    except EOFError:
-        break
+try:
+    while True:
+        s = input().strip()
+        if not s:
+            continue
+        solve(s, matrix_info)
+except EOFError:
+        pass
 
 # #include<iostream>
 # #include<stack>
