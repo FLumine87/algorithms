@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-c7fedf3aaf0619699014.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "test2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "node1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-node1-Debug-fc7fa18a2be56f076de8.json",
+					"name" : "node1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "node2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-node2-Debug-3db27f360995e15b3eb4.json",
+					"name" : "node2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodet-Debug-9773c3af8089c94d8cb3.json",
+					"name" : "nodet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodet2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodet2-Debug-8de40cf448dcfbb357bf.json",
+					"name" : "nodet2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test2_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test2_uninstall-Debug-e4a784b1993e1552f90f.json",
+					"name" : "test2_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-86c835c6899747460934.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/flumine/ROS2_test/ws1/src/test2/build",
+		"source" : "/home/flumine/ROS2_test/ws1/src/test2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

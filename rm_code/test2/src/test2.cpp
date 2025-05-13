@@ -6,7 +6,7 @@
 #include "cv_bridge/cv_bridge.h"
 #include <opencv2/opencv.hpp>
 
-#include "armor_detector/armor.hpp"
+#include "test2/armor.hpp"
 
 #include <chrono>
 #include <string>
@@ -16,42 +16,6 @@
 // #include <opencv2/core/base.hpp>
 // #include <opencv2/highgui.hpp>
 // #include <opencv2/imgcodecs.hpp>
-
-// class Light {
-//     public:
-//         // 构造函数
-//         Light(const cv::Rect &b_rect, const cv::Point2f &top, const cv::Point2f &bottom, 
-//               int point_count, double tilt_angle)
-//             : bounding_rect(b_rect), top(top), bottom(bottom), 
-//               point_count(point_count), tilt_angle(tilt_angle), color(UNKNOWN) {
-//             // 计算中心点
-//             center = cv::Point2f(
-//                 (top.x + bottom.x) / 2.0,
-//                 (top.y + bottom.y) / 2.0
-//             );
-//             // 计算灯条的长度和宽度
-//             length = cv::norm(top - bottom);
-//             width = static_cast<float>(b_rect.width);
-//         }
-    
-//         // 灯条颜色枚举
-//         enum Color {
-//             UNKNOWN,
-//             RED,
-//             BLUE
-//         };
-    
-//         // 成员变量
-//         cv::Rect bounding_rect;  // 最小外接矩形
-//         cv::Point2f top;         // 灯条顶部坐标
-//         cv::Point2f bottom;      // 灯条底部坐标
-//         cv::Point2f center;      // 灯条中心点
-//         float length;            // 灯条长度
-//         float width;             // 灯条宽度
-//         int point_count;         // 灯条内部像素点数量
-//         double tilt_angle;       // 灯条倾斜角度
-//         Color color;             // 灯条颜色
-// };
 
 
 class ImgNode: public rclcpp::Node
@@ -81,9 +45,18 @@ public:
 
     //静态参数
     int binary_thres = 26;
-    double min_fill_ratio = 0.5;
-    double min_ratio=0.001;
-    double max_ratio=0.750;
+    double min_fill_ratio = 0.65;
+    double max_fill_ratio = 0.90;
+    double min_ratio=0.075;
+    double max_ratio=0.250;
+    double max_angle=10.0;
+    
+    //绝对参数
+    // double min_fill_ratio = 0.82;
+    // double max_fill_ratio = 0.84;
+    // double min_ratio=0.150;
+    // double max_ratio=0.175;
+    //double max_angle=4.0;
 
 private:
     void publish_image(){
@@ -96,7 +69,7 @@ private:
 
         //test
         // cv::imshow("binary Image", b_img);
-        // cv::waitKey(3000);
+        // cv::waitKey(0);
         // cv::destroyWindow("binary Image");
 
         lights = findLights(gbr_img, b_img);
@@ -137,9 +110,13 @@ private:
             cv::fillPoly(mask, {mask_contour}, 255);//这里右边会出现一个小白条，还不清楚是什么原因
             std::vector<cv::Point> points;
             cv::findNonZero(mask, points);
-            bool is_fill_rotated_rect =
-                points.size() / (r_rect.size.width * r_rect.size.height) > min_fill_ratio;
-            if(!is_fill_rotated_rect)continue;
+
+            auto is_fill_rotated_rect =[&]()->bool{
+                float fill_ratio = points.size() / (r_rect.size.width * r_rect.size.height);
+                return (fill_ratio > min_fill_ratio && fill_ratio < max_fill_ratio);
+            };
+
+            if(!is_fill_rotated_rect())continue;
 
             cv::Vec4f return_param;
             cv::fitLine(points, return_param, cv::DIST_L2, 0, 0.01, 0.01);
@@ -160,14 +137,14 @@ private:
                 }
             }
 
-            rm_auto_aim::Light light = Light(b_rect, top, bottom, points.size(), angle_k);
+            rm_auto_aim::Light light = rm_auto_aim::Light(b_rect, top, bottom, points.size(), angle_k);
 
             auto isLight=[&]()->bool{
                 // The ratio of light (short side / long side)
                 float ratio = light.width / light.length;
                 bool ratio_ok = min_ratio < ratio && ratio < max_ratio;
-                // bool angle_ok = light.tilt_angle < max_angle;
-                bool is_light = ratio_ok ; //&& angle_ok
+                bool angle_ok = (max_angle - light.tilt_angle > 180 || max_angle + light.tilt_angle > 0);
+                bool is_light = ratio_ok && angle_ok; 
               
                 // // Fill in debug information
                 // auto_aim_interfaces::msg::DebugLight light_data;
@@ -180,8 +157,8 @@ private:
                 return is_light;
             };
 
-            if (isLight(light)) {
-                vector<rm_auto_aim::Light> rect = light;
+            if (isLight()) {
+                rm_auto_aim::Light rect = light;
                 if (  // Avoid assertion failed
                     0 <= rect.x && 0 <= rect.width && rect.x + rect.width <= rgb_img.cols && 0 <= rect.y &&
                     0 <= rect.height && rect.y + rect.height <= rgb_img.rows) {
@@ -192,8 +169,8 @@ private:
                         for (int j = 0; j < roi.cols; j++) {
                             if (cv::pointPolygonTest(contour, cv::Point2f(j + rect.x, i + rect.y), false) >= 0) {
                                 // if point is inside contour
-                                sum_r += roi.at<cv::Vec3b>(i, j)[0];
-                                sum_b += roi.at<cv::Vec3b>(i, j)[2];
+                                sum_r += roi.at<cv::Vec3b>(i, j)[2];
+                                sum_b += roi.at<cv::Vec3b>(i, j)[0];
                             }
                         }
                     }
@@ -211,12 +188,18 @@ private:
         return lights;
     }
 
-    void prit_lights(){
+    void prit_lights() {
+        // 创建一个副本以避免修改原始图像
+        cv::Mat display_img;
+        cv::cvtColor(b_img, display_img, cv::COLOR_GRAY2BGR);
+    
         for (size_t i = 0; i < lights.size(); ++i) {
             const auto& light = lights[i];
+    
+            // 打印灯条信息
             RCLCPP_INFO(this->get_logger(), "Light %zu:", i + 1);
-            RCLCPP_INFO(this->get_logger(), "  Top: (%f, %f)", light.top.x, light.top.y);
-            RCLCPP_INFO(this->get_logger(), "  Bottom: (%f, %f)", light.bottom.x, light.bottom.y);
+            // RCLCPP_INFO(this->get_logger(), "  Top: (%f, %f)", light.top.x, light.top.y);
+            // RCLCPP_INFO(this->get_logger(), "  Bottom: (%f, %f)", light.bottom.x, light.bottom.y);
             RCLCPP_INFO(this->get_logger(), "  Center: (%f, %f)", light.center.x, light.center.y);
             RCLCPP_INFO(this->get_logger(), "  Length: %f", light.length);
             RCLCPP_INFO(this->get_logger(), "  Width: %f", light.width);
@@ -224,12 +207,35 @@ private:
             RCLCPP_INFO(this->get_logger(), "  Color: %s", 
                 light.color == rm_auto_aim::Light::Color::RED ? "RED" : 
                 light.color == rm_auto_aim::Light::Color::BLUE ? "BLUE" : "UNKNOWN");
-        }
+            RCLCPP_INFO(this->get_logger(), "  bizhi: %f", light.width / light.length);
+            // RCLCPP_INFO(this->get_logger(), "  fill_ratio: %f", static_cast<float>(light.area) / (light.width * light.length));//算不出来
+    
+            // 绘制外接矩形
+            if (light.color == rm_auto_aim::Light::Color::RED) {
+                cv::rectangle(display_img, light, cv::Scalar(0, 0, 255), 2); // 红色矩形，线宽为 2
+            }else{
+                cv::rectangle(display_img, light, cv::Scalar(255, 0, 0), 2); // 蓝色矩形，线宽为 2
+            }
 
+            // 绘制拟合直线（直接使用 top 和 bottom）
+            cv::line(display_img, light.top, light.bottom, cv::Scalar(0, 255, 0), 2);
+        }
+    
+        // 显示带有外接矩形的图像
+        cv::imshow("Lights Bounding Rectangles", display_img);
+        cv::waitKey(0); // 等待用户按键
+        cv::destroyWindow("Lights Bounding Rectangles");
+    
+        // 用户交互
         std::string input;
         do {
-            std::cout << "输入 'y' 后继续: ";
+            std::cout << "输入 'y' 后继续，输入 'n' 退出程序: ";
             std::cin >> input;
+            if (input == "n") {
+                RCLCPP_INFO(this->get_logger(), "Terminating program...");
+                rclcpp::shutdown();  // 停止 ROS 2 节点
+                return;
+            }
         } while (input != "y");
     }
 

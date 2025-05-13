@@ -71,7 +71,10 @@ ament_target_dependencies(nodet2
   cv_bridge
   OpenCV
 )
-target_include_directories(nodet2 PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_include_directories(nodet2 PUBLIC 
+  ${OpenCV_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 target_link_libraries(nodet2 ${OpenCV_LIBRARIES})
 
 install(TARGETS
