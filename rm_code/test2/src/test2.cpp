@@ -21,9 +21,7 @@
 class ImgNode: public rclcpp::Node
 {
 public:
-    ImgNode(std::string name) : Node(name),
-    camera_matrix_(cv::Mat(3, 3, CV_64F, const_cast<double *>(camera_matrix.data())).clone()),
-    dist_coeffs_(cv::Mat(1, 5, CV_64F, const_cast<double *>(dist_coeffs.data())).clone())
+    ImgNode(std::string name) : Node(name)
     {
         // 创建一个 image_transport 发布者
         publisher_i = this->create_publisher<sensor_msgs::msg::Image>("image_topic", 10);
@@ -40,6 +38,12 @@ public:
             RCLCPP_ERROR(this->get_logger(), "Failed to read image");
             rclcpp::shutdown();
         }
+
+        // Initialize camera matrix and distortion coefficients
+        double cm[9] = {fx, 0, cx, 0, fy, cy, 0, 0, 1};
+        double dc[5] = {k1, k2, p1, p2, k3};
+        camera_matrix_ = cv::Mat(3, 3, CV_64F, cm).clone();
+        dist_coeffs_ = cv::Mat(1, 5, CV_64F, dc).clone();
 
         //pnp init
         // Unit: m
