@@ -39,6 +39,10 @@ public:
             rclcpp::shutdown();
         }
 
+        // Camera intrinsic parameters
+        double fx = 800, fy = 800, cx = 630, cy = 472;
+        double k1 = -0.1, k2 = 0.01, p1 = 0, p2 = 0, k3 = 0;
+
         // Initialize camera matrix and distortion coefficients
         double cm[9] = {fx, 0, cx, 0, fy, cy, 0, 0, 1};
         double dc[5] = {k1, k2, p1, p2, k3};
