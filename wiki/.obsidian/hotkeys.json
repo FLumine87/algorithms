@@ -1,0 +1,28 @@
+{
+  "obsidian-emoji-toolbar:emoji-picker:open-picker": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ],
+  "github-copilot:open-copilot-chat": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "obsidian-regex-replace:obsidian-regex-replace": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    }
+  ]
+}
