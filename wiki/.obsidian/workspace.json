@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "98a8f4c86c7d0cc0",
+        "id": "12cf942df8476f43",
         "type": "tabs",
         "children": [
           {
-            "id": "f2a7077518b27343",
+            "id": "b0296ce118ac40c4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JC系列/测试.md",
+                "file": "JC系列/_sub/JC1502.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "测试"
+              "title": "JC1502"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "高数/_sub/特征方程法.md",
+                "file": "JC系列/_sub/JC1502.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "特征方程法 的大纲"
+              "title": "JC1502 的大纲"
             }
           }
         ],
@@ -170,32 +170,41 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "f2a7077518b27343",
+  "active": "3f3e1e5b3b34643e",
   "lastOpenFiles": [
-    "JC系列/_png",
+    "JC系列/_png/Pasted image 20250605172300.png",
+    "JC系列/_png/Pasted image 20250605170414.png",
+    "JC系列/_png/Pasted image 20250605170359.png",
+    "JC系列/_png/Pasted image 20250605165752.png",
+    "JC系列/_png/Pasted image 20250605165652.png",
+    "JC系列/_png/Pasted image 20250605162951.png",
+    "JC系列/💻wiki_JC.md",
+    "JC系列/_png/Pasted image 20250605155608.png",
+    "JC系列/_png/Pasted image 20250605155626.png",
+    "JC系列/_sub/JC1502.md",
+    "JC系列/_sub/逻辑门.md",
     "高数/_sub/特征方程法.md",
-    "JC系列/测试.md",
-    "高数/_png/Pasted image 20250603204431.png",
-    "高数/_png/Pasted image 20250603201815.png",
-    "高数/_png/Pasted image 20250603201837.png",
-    "高数/_sub/常微分求解.md",
-    "高数/📖目录.md",
+    "高数/📖wiki_高数🔢.md",
+    "JC系列/_png/Pasted image 20250605153427.png",
+    "JC系列/_png/Pasted image 20250604225805.png",
+    "JC系列/_sub/一些疑问.md",
+    "JC系列/_png/Pasted image 20250604224354.png",
     "高数/_sub/1.md",
+    "Excalidraw/Drawing 2025-06-04 22.02.41.excalidraw.md",
+    "JC系列/_sub",
+    "JC系列/wiki_JC.md",
+    "JC系列/测试.md",
+    "高数/_sub/积分因子.md",
+    "高数/_sub/😫常微分方程求解.md",
+    "Excalidraw",
+    "JC系列/_png",
     "微分方程，换元.md",
     "高数/_sub/未命名.md",
-    "高数/_png/Pasted image 20250603201021.png",
-    "高数/_sub/积分因子.md",
-    "高数/_png/Pasted image 20250603175152.png",
-    "高数/_png/Pasted image 20250603170759.png",
     "().md",
     "[[常微分求解]].md",
-    "高数/_png/Pasted image 20250603173216.png",
-    "高数/_png/Pasted image 20250603170626.png",
     "高数/_png",
     "高数/_sub",
-    "JC系列/💻wiki_JC.md",
     "未命名看板.md",
-    "_png/Pasted image 20250603165105.png",
     "高数"
   ]
 }
