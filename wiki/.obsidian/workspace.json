@@ -8,33 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b0296ce118ac40c4",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "JC系列/_sub/Pasted image 20250607141854.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250607141854"
-            }
-          },
-          {
             "id": "6f2de9a46a6a9276",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "高数/_sub/2.md",
+                "file": "JC系列/_sub/有限状态机（Finite State Machines, FSM）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2"
+              "title": "有限状态机（Finite State Machines, FSM）"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,14 +173,22 @@
   "active": "6f2de9a46a6a9276",
   "lastOpenFiles": [
     "高数/📖wiki_高数🔢.md",
+    "高数/_sub/😫常微分方程求解.md",
+    "高数/_sub/特征方程法.md",
+    "JC系列/💻wiki_JC.md",
+    "高数/_sub/积分因子.md",
+    "JC系列/_sub/有限状态机（Finite State Machines, FSM）.md",
+    "有限.md",
+    "JC系列/_sub/JC1502.md",
+    "高数/_sub/克莱姆法则.md",
+    "高数/_sub/3.md",
+    "高数/_sub/关于这道题所遇到的微分因子.md",
+    "高数/_png/Pasted image 20250615222951.png",
+    "高数/_sub/直接求特解.md",
+    "高数/_sub/“一阶导数约束”.md",
     "高数/_sub/2.md",
     "高数/_sub/1.md",
-    "高数/_sub/积分因子.md",
-    "高数/_sub/特征方程法.md",
-    "高数/_sub/😫常微分方程求解.md",
-    "JC系列/_sub/JC1502.md",
     "JC系列/_sub/寄存器（Register）.md",
-    "JC系列/💻wiki_JC.md",
     "yasi/_sub/1.md",
     "yasi/_sub/yasi.md",
     "yasi/_sub",
@@ -209,7 +204,6 @@
     "JC系列/_png/Pasted image 20250605221920.png",
     "JC系列/_png/Pasted image 20250605221906.png",
     "JC系列/_png/Pasted image 20250605221655.png",
-    "JC系列/_png/Pasted image 20250605172300.png",
     "JC系列/_sub/一些疑问.md",
     "Excalidraw/Drawing 2025-06-04 22.02.41.excalidraw.md",
     "JC系列/_sub",
@@ -219,11 +213,8 @@
     "JC系列/_png",
     "微分方程，换元.md",
     "高数/_sub/未命名.md",
-    "().md",
-    "[[常微分求解]].md",
     "高数/_png",
     "高数/_sub",
-    "未命名看板.md",
     "高数"
   ]
 }
