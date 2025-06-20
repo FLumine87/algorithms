@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "10aec5a72783c3d7",
+        "id": "722a262d61862913",
         "type": "tabs",
         "children": [
           {
-            "id": "21a1a5c0ec9d0870",
+            "id": "26495364d9c56fae",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "JC系列/_sub/时序电路定时分析.md",
-                "mode": "source",
-                "source": false
+                "file": "tmp/政治/_png/Pasted image 20250620234116.png"
               },
-              "icon": "lucide-file",
-              "title": "时序电路定时分析"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250620234116"
             }
           }
         ]
@@ -172,18 +170,33 @@
   },
   "active": "3f3e1e5b3b34643e",
   "lastOpenFiles": [
-    "JC系列/_png/Pasted image 20250620211523.png",
-    "JC系列/_png/Pasted image 20250620211437.png",
+    "tmp/政治/_png/Pasted image 20250620234459.png",
+    "tmp/政治/习特.md",
+    "tmp/政治/_png/Pasted image 20250620235735.png",
+    "tmp/政治/_png/Pasted image 20250620235716.png",
+    "tmp/政治/_png/Pasted image 20250620235659.png",
+    "tmp/政治/_png/Pasted image 20250620235315.png",
+    "tmp/政治/_png/Pasted image 20250620235151.png",
+    "tmp/政治/_png/Pasted image 20250620235138.png",
+    "tmp/政治/_png/Pasted image 20250620234653.png",
+    "tmp/政治/_png/Pasted image 20250620234555.png",
+    "tmp/政治/_png/Pasted image 20250620234116.png",
+    "tmp/历史/近纲.md",
+    "tmp/历史/_sub/西方列强侵略中国的方式、内容。.md",
+    "JC系列/_sub/时序电路定时分析.md",
+    "tmp/历史/_sub",
+    "tmp/历史/_png",
+    "tmp/历史",
+    "tmp/政治",
+    "tmp/政治/_png",
+    "未命名",
+    "tmp",
     "JC系列/_sub/有限状态机（Finite State Machines, FSM）.md",
     "JC系列/_sub/JC1502.md",
     "JC系列/_sub/算术逻辑单元（ALU）.md",
     "JC系列/_sub/波纹进位加法器（Ripple-Carry Adder）与超前进位加法器（Carry-Lookahead Adder）.md",
     "JC系列/💻wiki_JC.md",
     "JC系列/_sub/汇编码.md",
-    "JC系列/_png/Pasted image 20250620141250.png",
-    "JC系列/_png/Pasted image 20250620141154.png",
-    "JC系列/_png/Pasted image 20250620141135.png",
-    "JC系列/_sub/时序电路定时分析.md",
     "JC系列/_sub/寄存器（Register）.md",
     "JC系列/_sub/摩尔机.md",
     "高数/_sub/特征方程法.md",
@@ -198,24 +211,9 @@
     "有限.md",
     "高数/_sub/3.md",
     "高数/_sub/关于这道题所遇到的微分因子.md",
-    "高数/_png/Pasted image 20250615222951.png",
     "高数/_sub/直接求特解.md",
     "高数/_sub/“一阶导数约束”.md",
-    "高数/_sub/2.md",
-    "高数/_sub/1.md",
-    "yasi/_sub/1.md",
     "yasi/_sub",
-    "yasi",
-    "JC系列/_sub/Pasted image 20250607141854.png",
-    "JC系列/_png/Pasted image 20250605225008.png",
-    "JC系列/_png/Pasted image 20250605224957.png",
-    "JC系列/_png/Pasted image 20250605224846.png",
-    "JC系列/_png/Pasted image 20250605224829.png",
-    "JC系列/_sub",
-    "Excalidraw",
-    "JC系列/_png",
-    "高数/_png",
-    "高数/_sub",
-    "高数"
+    "yasi"
   ]
 }
