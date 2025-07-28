@@ -168,63 +168,145 @@ def cap_win_remove():# 删除缓存文件
 	else:
 		print("错误111：缓存未被清空")
 
+def find_pattern_with_orb_and_color(screenshot_path, pattern_path, color_threshold=0.8, orb_threshold=10):
+	"""
+	使用 ORB 特征匹配和颜色筛选在截屏中寻找目标图案
+	:param screenshot_path: 截屏文件路径
+	:param pattern_path: 目标图案文件路径
+	:param color_threshold: 颜色相似度阈值（0~1）
+	:param orb_threshold: ORB 匹配的最低匹配点数阈值
+	:return: 匹配的区域坐标 (top_left_x, top_left_y, bottom_right_x, bottom_right_y)
+	"""
+	try:
+		# 加载截屏和目标图案
+		screenshot = cv2.imread(screenshot_path, cv2.IMREAD_COLOR)
+		pattern = cv2.imread(pattern_path, cv2.IMREAD_COLOR)
+
+		if screenshot is None or pattern is None:
+			print("无法加载截屏或目标图案文件")
+			return None
+
+		# 初始化 ORB 检测器
+		orb = cv2.ORB_create()
+
+		# 检测特征点并计算描述符
+		keypoints1, descriptors1 = orb.detectAndCompute(pattern, None)
+		keypoints2, descriptors2 = orb.detectAndCompute(screenshot, None)
+
+		# 使用 BFMatcher 进行特征匹配
+		bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+		matches = bf.match(descriptors1, descriptors2)
+
+		# 按匹配距离排序
+		matches = sorted(matches, key=lambda x: x.distance)
+
+		# 如果匹配点数不足，返回 None
+		if len(matches) < orb_threshold:
+			print("ORB 匹配点数不足，未找到目标图案")
+			return None
+
+		# 获取匹配点的坐标
+		src_pts = np.float32([keypoints1[m.queryIdx].pt for m in matches]).reshape(-1, 1, 2)
+		dst_pts = np.float32([keypoints2[m.trainIdx].pt for m in matches]).reshape(-1, 1, 2)
+
+		# 计算单应性矩阵
+		matrix, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
+
+		# 使用单应性矩阵计算目标图案在截屏中的位置
+		h, w, _ = pattern.shape
+		points = np.float32([[0, 0], [w, 0], [w, h], [0, h]]).reshape(-1, 1, 2)
+		transformed_points = cv2.perspectiveTransform(points, matrix)
+
+		# 获取目标区域的边界框
+		top_left = tuple(np.int32(transformed_points[0][0]))
+		bottom_right = tuple(np.int32(transformed_points[2][0]))
+
+		# 提取匹配区域
+		matched_region = screenshot[top_left[1]:bottom_right[1], top_left[0]:bottom_right[0]]
+
+		# 如果匹配区域大小不符合，返回 None
+		if matched_region.shape[0] <= 0 or matched_region.shape[1] <= 0:
+			print("匹配区域无效")
+			return None
+
+		# 计算目标图案和匹配区域的颜色直方图
+		pattern_hist = cv2.calcHist([pattern], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256])
+		pattern_hist = cv2.normalize(pattern_hist, pattern_hist).flatten()
+
+		matched_region_hist = cv2.calcHist([matched_region], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256])
+		matched_region_hist = cv2.normalize(matched_region_hist, matched_region_hist).flatten()
+
+		# 计算颜色相似性
+		color_similarity = cv2.compareHist(pattern_hist, matched_region_hist, cv2.HISTCMP_CORREL)
+
+		if color_similarity >= color_threshold:
+			print(f"匹配成功，位置: 左上角 {top_left}, 右下角 {bottom_right}, 颜色相似度: {color_similarity}")
+			return top_left[0], top_left[1], bottom_right[0], bottom_right[1]
+		else:
+			print(f"颜色相似度不足: {color_similarity}")
+			return None
+
+	except Exception as e:
+		print(f"匹配失败: {e}")
+		return None
+
 def find_pattern_in_screenshot(screenshot_path, pattern_path, threshold=0.7, resize_scales=None):
-    """
-    在截屏中寻找并匹配一个给定的图案，支持图案大小自适应和匹配阈值选项
-    :param screenshot_path: 截屏文件路径
-    :param pattern_path: 目标图案文件路径
-    :param threshold: 匹配阈值，默认值为 0.8
-    :param resize_scales: 图案缩放比例列表（如 [0.5, 1.0, 1.5]），默认为 None（不缩放）
-    :return: 图案在截屏中的位置坐标 (top_left_x, top_left_y, bottom_right_x, bottom_right_y)
-    """
-    try:
-        # 加载截屏和目标图案
-        screenshot = cv2.imread(screenshot_path, cv2.IMREAD_COLOR)
-        pattern = cv2.imread(pattern_path, cv2.IMREAD_COLOR)
+	"""
+	在截屏中寻找并匹配一个给定的图案，支持图案大小自适应和匹配阈值选项
+	:param screenshot_path: 截屏文件路径
+	:param pattern_path: 目标图案文件路径
+	:param threshold: 匹配阈值，默认值为 0.8
+	:param resize_scales: 图案缩放比例列表（如 [0.5, 1.0, 1.5]），默认为 None（不缩放）
+	:return: 图案在截屏中的位置坐标 (top_left_x, top_left_y, bottom_right_x, bottom_right_y)
+	"""
+	try:
+		# 加载截屏和目标图案
+		screenshot = cv2.imread(screenshot_path, cv2.IMREAD_COLOR)
+		pattern = cv2.imread(pattern_path, cv2.IMREAD_COLOR)
 
-        if screenshot is None or pattern is None:
-            print("无法加载截屏或目标图案文件")
-            return None
+		if screenshot is None or pattern is None:
+			print("无法加载截屏或目标图案文件")
+			return None
 
-        # 如果未指定缩放比例，则使用默认比例 [0.5, 1.0, 2.0]（即不缩放）
-        if resize_scales is None:
-            resize_scales = [0.5, 1.0, 2.0]
+		# 如果未指定缩放比例，则使用默认比例 [0.5, 1.0, 2.0]（即不缩放）
+		if resize_scales is None:
+			resize_scales = [0.5, 1.0, 2.0]
 
-        best_match = None
-        best_val = -1
+		best_match = None
+		best_val = -1
 
-        # 遍历所有缩放比例
-        for scale in resize_scales:
-            # 缩放目标图案
-            resized_pattern = cv2.resize(pattern, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
+		# 遍历所有缩放比例
+		for scale in resize_scales:
+			# 缩放目标图案
+			resized_pattern = cv2.resize(pattern, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
 
-            # 模板匹配
-            result = cv2.matchTemplate(screenshot, resized_pattern, cv2.TM_CCOEFF_NORMED)
-            min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
+			# 模板匹配
+			result = cv2.matchTemplate(screenshot, resized_pattern, cv2.TM_CCOEFF_NORMED)
+			min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 
-            # 如果匹配值超过阈值并且是当前最佳匹配
-            if max_val >= threshold and max_val > best_val:
-                best_val = max_val
-                best_match = {
-                    "top_left": max_loc,
-                    "bottom_right": (max_loc[0] + resized_pattern.shape[1], max_loc[1] + resized_pattern.shape[0]),
-                    "scale": scale,
-                    "confidence": max_val
-                }
+			# 如果匹配值超过阈值并且是当前最佳匹配
+			if max_val >= threshold and max_val > best_val:
+				best_val = max_val
+				best_match = {
+					"top_left": max_loc,
+					"bottom_right": (max_loc[0] + resized_pattern.shape[1], max_loc[1] + resized_pattern.shape[0]),
+					"scale": scale,
+					"confidence": max_val
+				}
 
-        # 如果找到最佳匹配
-        if best_match:
-            top_left = best_match["top_left"]
-            bottom_right = best_match["bottom_right"]
-            print(f"匹配成功，位置: 左上角 {top_left}, 右下角 {bottom_right}, 缩放比例: {best_match['scale']}, 置信度: {best_match['confidence']}")
-            return top_left[0], top_left[1], bottom_right[0], bottom_right[1]
-        else:
-            print("未找到匹配的目标图案")
-            return None
+		# 如果找到最佳匹配
+		if best_match:
+			top_left = best_match["top_left"]
+			bottom_right = best_match["bottom_right"]
+			print(f"匹配成功，位置: 左上角 {top_left}, 右下角 {bottom_right}, 缩放比例: {best_match['scale']}, 置信度: {best_match['confidence']}")
+			return top_left[0], top_left[1], bottom_right[0], bottom_right[1]
+		else:
+			print("未找到匹配的目标图案")
+			return None
 
-    except Exception as e:
-        print(f"匹配失败: {e}")
-        return None
+	except Exception as e:
+		print(f"匹配失败: {e}")
+		return None
 
 # def capture_win_main():
 #     while running:
