@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "yasi/口语/素材.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "素材"
+            }
+          },
+          {
+            "id": "8f13a89f867fcc1b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "yasi/口语/短语.md",
                 "mode": "source",
                 "source": false
@@ -20,36 +34,9 @@
               "icon": "lucide-file",
               "title": "短语"
             }
-          },
-          {
-            "id": "52cc4ed677853c09",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/口语/专有词.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "专有词"
-            }
-          },
-          {
-            "id": "22cd599fe44254b7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/口语/专有词.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "专有词"
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -199,13 +186,21 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "2eddf9dd688276f6",
+  "active": "8f13a89f867fcc1b",
   "lastOpenFiles": [
-    "yasi/口语/专有词.md",
     "yasi/口语/素材.md",
     "yasi/口语/短语.md",
-    "JC系列/_sub/JC1502.md",
+    "yasi/口语/专有词.md",
+    "yasi/_sub/地理.md",
+    "yasi/_sub/人文.md",
+    "yasi/_sub/运动.md",
+    "yasi/_sub/旅游.md",
+    "yasi/_sub/生活与健康.md",
+    "yasi/_sub/学习.md",
+    "yasi/_sub/工作.md",
+    "yasi/_sub/文化.md",
     "JC系列/💻wiki_JC.md",
+    "JC系列/_sub/JC1502.md",
     "tmp/aaa.md",
     "yasi/口语",
     "高数/_sub/特征方程法.md",
@@ -220,24 +215,16 @@
     "高数/_sub/克莱姆法则.md",
     "高数/_sub/典例.md",
     "高数/_sub/欧拉公式.md",
-    "高数/_sub/积分因子.md",
-    "tmp/政治/习特.md",
     "tmp/政治/_png/Pasted image 20250620230305.png",
     "高数/_png/Pasted image 20250625212922.png",
-    "高数/_sub/极值点与鞍点.md",
     "高数/_png/Pasted image 20250625213001.png",
     "高数/_png/Pasted image 20250625212944.png",
     "高数/_png/Pasted image 20250625212932.png",
-    "高数/_sub/方向导数.md",
     "高数/_png/Pasted image 20250625204447.png",
     "tmp/政治/_png/Pasted image 20250623174050.png",
     "tmp/政治/_png/Pasted image 20250623223453.png",
     "tmp/政治/_png/Pasted image 20250623223444.png",
     "tmp/政治/_png/Pasted image 20250623223434.png",
-    "JC系列/_sub/汇编码.md",
-    "JC系列/_sub/算术逻辑单元（ALU）.md",
-    "JC系列/_sub/波纹进位加法器（Ripple-Carry Adder）与超前进位加法器（Carry-Lookahead Adder）.md",
-    "JC系列/_sub/有限状态机（Finite State Machines, FSM）.md",
     "tmp/历史/_sub",
     "tmp/历史/_png",
     "tmp/历史",
