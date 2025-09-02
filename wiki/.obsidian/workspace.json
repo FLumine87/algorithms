@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "yasi/口语/素材.md",
+                "file": "yasi/_sub/生活与健康.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "素材"
+              "title": "生活与健康"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "yasi/口语/短语.md",
+                "file": "yasi/口语/素材.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "短语"
+              "title": "素材"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,19 +185,19 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "8f13a89f867fcc1b",
+  "active": "2eddf9dd688276f6",
   "lastOpenFiles": [
-    "yasi/口语/素材.md",
-    "yasi/口语/短语.md",
     "yasi/口语/专有词.md",
-    "yasi/_sub/地理.md",
-    "yasi/_sub/人文.md",
-    "yasi/_sub/运动.md",
-    "yasi/_sub/旅游.md",
     "yasi/_sub/生活与健康.md",
+    "yasi/_sub/文化.md",
+    "yasi/_sub/地理.md",
     "yasi/_sub/学习.md",
     "yasi/_sub/工作.md",
-    "yasi/_sub/文化.md",
+    "yasi/_sub/运动.md",
+    "yasi/口语/素材.md",
+    "yasi/口语/短语.md",
+    "yasi/_sub/旅游.md",
+    "yasi/_sub/人文.md",
     "JC系列/💻wiki_JC.md",
     "JC系列/_sub/JC1502.md",
     "tmp/aaa.md",
