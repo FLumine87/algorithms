@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2eddf9dd688276f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/_sub/生活与健康.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "生活与健康"
-            }
-          },
-          {
             "id": "8f13a89f867fcc1b",
             "type": "leaf",
             "state": {
@@ -34,8 +20,21 @@
               "icon": "lucide-file",
               "title": "素材"
             }
+          },
+          {
+            "id": "48d27e57d258015c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "概统/_img/b7e08eaa9aadfeb89a930b775188d10.png"
+              },
+              "icon": "lucide-image",
+              "title": "b7e08eaa9aadfeb89a930b775188d10"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,16 +184,22 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "2eddf9dd688276f6",
+  "active": "3f3e1e5b3b34643e",
   "lastOpenFiles": [
-    "yasi/口语/专有词.md",
+    "概统/第一章.md",
+    "概统/_img",
+    "概统/_img/b7e08eaa9aadfeb89a930b775188d10.png",
+    "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
+    "yasi/口语/素材.md",
+    "概统/_sub",
+    "概统",
     "yasi/_sub/生活与健康.md",
+    "yasi/口语/专有词.md",
     "yasi/_sub/文化.md",
     "yasi/_sub/地理.md",
     "yasi/_sub/学习.md",
     "yasi/_sub/工作.md",
     "yasi/_sub/运动.md",
-    "yasi/口语/素材.md",
     "yasi/口语/短语.md",
     "yasi/_sub/旅游.md",
     "yasi/_sub/人文.md",
@@ -212,8 +217,6 @@
     "高数/_sub/关于这道题所遇到的微分因子.md",
     "高数/_sub/2.md",
     "高数/_sub/克莱姆法则.md",
-    "高数/_sub/典例.md",
-    "高数/_sub/欧拉公式.md",
     "tmp/政治/_png/Pasted image 20250620230305.png",
     "高数/_png/Pasted image 20250625212922.png",
     "高数/_png/Pasted image 20250625213001.png",
@@ -222,16 +225,11 @@
     "高数/_png/Pasted image 20250625204447.png",
     "tmp/政治/_png/Pasted image 20250623174050.png",
     "tmp/政治/_png/Pasted image 20250623223453.png",
-    "tmp/政治/_png/Pasted image 20250623223444.png",
-    "tmp/政治/_png/Pasted image 20250623223434.png",
     "tmp/历史/_sub",
     "tmp/历史/_png",
     "tmp/历史",
     "tmp/政治",
     "tmp/政治/_png",
-    "tmp",
-    "典例 $$y'' - 2y' + 2y = 4e^x",
-    "yasi/_sub",
-    "yasi"
+    "tmp"
   ]
 }
