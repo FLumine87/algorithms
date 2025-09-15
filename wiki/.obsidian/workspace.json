@@ -1,64 +1,41 @@
 {
   "main": {
-    "id": "fc04be3e8513bfe9",
+    "id": "a4c5dec877976953",
     "type": "split",
     "children": [
       {
-        "id": "f7c22d7e8a125048",
+        "id": "4c1f79bc554b1b98",
         "type": "tabs",
         "children": [
           {
-<<<<<<< HEAD
-            "id": "54a677e0550074a9",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-=======
-            "id": "8f13a89f867fcc1b",
+            "id": "34fd9bae490f75a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "yasi/口语/素材.md",
+                "file": "概统/第一章.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "素材"
->>>>>>> 44c2d9eb7b9d76381b02cc067b0f00e6c652d334
-            }
-          },
-          {
-            "id": "48d27e57d258015c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "概统/_img/b7e08eaa9aadfeb89a930b775188d10.png"
-              },
-              "icon": "lucide-image",
-              "title": "b7e08eaa9aadfeb89a930b775188d10"
+              "title": "第一章"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "8cd9935624619140",
+    "id": "7669dae95c99fe59",
     "type": "split",
     "children": [
       {
-        "id": "4244cf15713a886c",
+        "id": "8a715a9c74b5209c",
         "type": "tabs",
         "children": [
           {
-            "id": "3f3e1e5b3b34643e",
+            "id": "57844fbb348e54aa",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -71,7 +48,7 @@
             }
           },
           {
-            "id": "7db3f0a319fe5280",
+            "id": "17922497046a9399",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -88,7 +65,7 @@
             }
           },
           {
-            "id": "210d0cc0fb061db8",
+            "id": "033a3f3daa0d72c5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -101,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "ad38162285d20f58",
+    "id": "dc6ecc5c57c4c416",
     "type": "split",
     "children": [
       {
-        "id": "f05a2aba3bd31ccc",
+        "id": "a17fc607a72fdd69",
         "type": "tabs",
         "children": [
           {
-            "id": "c33c17166845589c",
+            "id": "e94498c096fe2b86",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "高数/_sub/特征方程法.md",
+                "file": "概统/第一章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,24 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "特征方程法 的反向链接列表"
+              "title": "第一章 的反向链接列表"
             }
           },
           {
-            "id": "4389b2feaecf6215",
+            "id": "680050f8d238475b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "概统/第一章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "第一章 的出链列表"
             }
           },
           {
-            "id": "e06136d4122c2ca8",
+            "id": "785217af571576fe",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -159,106 +137,42 @@
             }
           },
           {
-            "id": "36a4e4b367700079",
+            "id": "5aed99ac8b1173eb",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "JC系列/_sub/JC1502.md",
+                "file": "概统/第一章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "JC1502 的大纲"
+              "title": "第一章 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 302.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "3f3e1e5b3b34643e",
+  "active": "57844fbb348e54aa",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "yasi/_sub/de44a48d4c8e2536a27470628faa769a.png",
-    "yasi/口语/短语.md",
-    "yasi/口语/素材.md",
-    "yasi/_sub/生活与健康.md",
-    "yasi/口语/专有词.md",
-    "yasi/_sub/雅思备考素材与笔记.md",
-    "yasi.zip",
-=======
-    "概统/第一章.md",
-    "概统/_img",
-    "概统/_img/b7e08eaa9aadfeb89a930b775188d10.png",
-    "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
-    "yasi/口语/素材.md",
-    "概统/_sub",
-    "概统",
-    "yasi/_sub/生活与健康.md",
-    "yasi/口语/专有词.md",
->>>>>>> 44c2d9eb7b9d76381b02cc067b0f00e6c652d334
-    "yasi/_sub/文化.md",
-    "yasi/_sub/地理.md",
-    "yasi/_sub/学习.md",
-    "yasi/_sub/工作.md",
-    "yasi/_sub/运动.md",
-<<<<<<< HEAD
-=======
-    "yasi/口语/短语.md",
->>>>>>> 44c2d9eb7b9d76381b02cc067b0f00e6c652d334
-    "yasi/_sub/旅游.md",
-    "yasi/_sub/人文.md",
-    "JC系列/💻wiki_JC.md",
-    "JC系列/_sub/JC1502.md",
-    "tmp/aaa.md",
-    "yasi/口语",
-    "高数/_sub/特征方程法.md",
-    "高数/_sub/直接求特解.md",
-    "高数/_sub/😫常微分方程求解.md",
-    "高数/📖wiki_高数🔢.md",
-    "高数/_sub/1.md",
-    "高数/_sub/好题.md",
-    "高数/_sub/3.md",
-    "高数/_sub/关于这道题所遇到的微分因子.md",
-    "高数/_sub/2.md",
-    "高数/_sub/克莱姆法则.md",
-    "tmp/政治/_png/Pasted image 20250620230305.png",
-    "高数/_png/Pasted image 20250625212922.png",
-    "高数/_png/Pasted image 20250625213001.png",
-    "高数/_png/Pasted image 20250625212944.png",
-    "高数/_png/Pasted image 20250625212932.png",
-    "高数/_png/Pasted image 20250625204447.png",
-    "tmp/政治/_png/Pasted image 20250623174050.png",
-    "tmp/政治/_png/Pasted image 20250623223453.png",
-    "tmp/历史/_sub",
-    "tmp/历史/_png",
-    "tmp/历史",
-    "tmp/政治",
-    "tmp/政治/_png",
-<<<<<<< HEAD
-    "tmp",
-    "典例 $$y'' - 2y' + 2y = 4e^x",
-    "yasi/_sub"
-=======
-    "tmp"
->>>>>>> 44c2d9eb7b9d76381b02cc067b0f00e6c652d334
+    "概统/_sub"
   ]
 }
