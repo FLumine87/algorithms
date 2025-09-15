@@ -4,35 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7706c55dceef0c86",
+        "id": "f7c22d7e8a125048",
         "type": "tabs",
         "children": [
           {
-            "id": "2eddf9dd688276f6",
+            "id": "54a677e0550074a9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/_sub/生活与健康.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "生活与健康"
-            }
-          },
-          {
-            "id": "8f13a89f867fcc1b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/口语/素材.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "素材"
+              "title": "新标签页"
             }
           }
         ]
@@ -185,17 +167,20 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "2eddf9dd688276f6",
+  "active": "3f3e1e5b3b34643e",
   "lastOpenFiles": [
-    "yasi/口语/专有词.md",
+    "yasi/_sub/de44a48d4c8e2536a27470628faa769a.png",
+    "yasi/口语/短语.md",
+    "yasi/口语/素材.md",
     "yasi/_sub/生活与健康.md",
+    "yasi/口语/专有词.md",
+    "yasi/_sub/雅思备考素材与笔记.md",
+    "yasi.zip",
     "yasi/_sub/文化.md",
     "yasi/_sub/地理.md",
     "yasi/_sub/学习.md",
     "yasi/_sub/工作.md",
     "yasi/_sub/运动.md",
-    "yasi/口语/素材.md",
-    "yasi/口语/短语.md",
     "yasi/_sub/旅游.md",
     "yasi/_sub/人文.md",
     "JC系列/💻wiki_JC.md",
@@ -212,8 +197,6 @@
     "高数/_sub/关于这道题所遇到的微分因子.md",
     "高数/_sub/2.md",
     "高数/_sub/克莱姆法则.md",
-    "高数/_sub/典例.md",
-    "高数/_sub/欧拉公式.md",
     "tmp/政治/_png/Pasted image 20250620230305.png",
     "高数/_png/Pasted image 20250625212922.png",
     "高数/_png/Pasted image 20250625213001.png",
@@ -231,7 +214,6 @@
     "tmp/政治/_png",
     "tmp",
     "典例 $$y'' - 2y' + 2y = 4e^x",
-    "yasi/_sub",
-    "yasi"
+    "yasi/_sub"
   ]
 }
