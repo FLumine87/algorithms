@@ -3,7 +3,7 @@
 
 #answer:Using indexes, recursively call functions,++n each time, to achieve search.
 # Time complexity O (n), space complexity O (n)
-def find_max_index(S, n = 0):
+def find_max(S, n = 0):
     if n == len(S) - 1:
         return S[n]
     else:
@@ -11,7 +11,7 @@ def find_max_index(S, n = 0):
         return S[n] if S[n] > max else max
     
 S = [3, 5, 2, 8, 1]
-print(find_max_index(S, 0))
+print(find_max(S, 0))
 
 # R-4.7 Describe a recursive function for converting a string of digits into the integer it 
 # represents. For example, 13531 represents the integer 13,531.
@@ -27,3 +27,15 @@ def string_to_int(s, n=0):
     return c * (10 ** p) + r
 S_1 = "123"
 print(string_to_int(S_1))
+
+# C-4.9 Write a short recursive Python function that finds the minimum and maximum 
+# values in a sequence without using any loops.
+
+def find_max_min(S, n = 0):
+    if n == len(S) - 1:
+        return S[n]
+    else:
+        max = find_max_index(S, n + 1)
+        return S[n] if S[n] > max else max
+    
+print(find_max_index(S, 0))
