@@ -354,7 +354,7 @@ void Solver::GetBestPose(const auto_aim_interfaces::msg::Target &target,
         best_armor_index = i;
         min_angle_to_x = std::abs(AngleToGimbalX(std::atan2(armor_poses[i].position.y(), armor_poses[i].position.x()), cur_yaw_));
       }
-    }
+    }//插个眼，我感觉这里选板可能会选到侧板
 
   }
   
