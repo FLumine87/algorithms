@@ -1,4 +1,14 @@
 
+ $$ t = \frac{e^{K \cdot s} - 1}{K \cdot v \cdot \cos(\theta)} $$
+
+
+ $$ z = v \cdot \sin(\theta) \cdot t - \frac{1}{2} \cdot g \cdot t^2 $$
+
+
+
+
+---
+
 
 | **维度**    | ClaSP            | PELT            | FLUSS        | BINSEG         | STUMPY           |
 | --------- | ---------------- | --------------- | ------------ | -------------- | ---------------- |
