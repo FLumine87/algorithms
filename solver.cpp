@@ -68,7 +68,7 @@ fire_control_interfaces::msg::GimbalCmd Solver::Solve(const auto_aim_interfaces:
     tf2::fromMsg(msg_q, tf_q);
     // double roll;//在这里把roll角写进具体的参数
     tf2::Matrix3x3(tf_q).getRPY(cur_roll_, cur_pitch_, cur_yaw_);
-    cur_pitch_ = -cur_pitch_;
+    cur_pitch_ = -cur_pitch_;//这里不好说要不要改
   } catch (tf2::TransformException &ex) {
     RCLCPP_ERROR(node_shared_->get_logger(), "armor_solver: %s", ex.what());
     throw ex;
@@ -217,8 +217,8 @@ fire_control_interfaces::msg::GimbalCmd Solver::Solve(const auto_aim_interfaces:
   gimbal_cmd.aim_y = chosen_aim_pose.position.y();
   gimbal_cmd.aim_z = chosen_aim_pose.position.z();
   //  change of angle
-  gimbal_cmd.yaw_diff = hit_aim_info.yaw - cur_yaw_;//在填入这里前就需要修正了
-  gimbal_cmd.pitch_diff = - (hit_aim_info.pitch - cur_pitch_);//应该是在这改，很有可能要补一个函数
+  gimbal_cmd.yaw_diff = atan(tan(-(hit_aim_info.yaw-cur_yaw_)) * cos(cur_roll_) - (sin(cur_roll_) * tan(hit_aim_info.pitch-cur_pitch_)) / cos(-(hit_aim_info.yaw-cur_yaw_)));
+  gimbal_cmd.pitch_diff = asin(sin(hit_aim_info.pitch-cur_pitch_) * cos(cur_roll_) + sin(-(hit_aim_info.yaw-cur_yaw_)) * cos(hit_aim_info.pitch-cur_pitch_) * sin(cur_roll_));
   // 加上开火延迟（拨弹延迟等）用于火控
   dt += ReceiveToFireDelay_;
 
