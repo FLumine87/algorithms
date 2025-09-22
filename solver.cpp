@@ -68,7 +68,7 @@ fire_control_interfaces::msg::GimbalCmd Solver::Solve(const auto_aim_interfaces:
     tf2::fromMsg(msg_q, tf_q);
     // double roll;//在这里把roll角写进具体的参数
     tf2::Matrix3x3(tf_q).getRPY(cur_roll_, cur_pitch_, cur_yaw_);
-    cur_pitch_ = -cur_pitch_;//这里不好说要不要改
+    cur_pitch_ = -cur_pitch_;//这里不好说要不要改//？？
   } catch (tf2::TransformException &ex) {
     RCLCPP_ERROR(node_shared_->get_logger(), "armor_solver: %s", ex.what());
     throw ex;
@@ -217,8 +217,9 @@ fire_control_interfaces::msg::GimbalCmd Solver::Solve(const auto_aim_interfaces:
   gimbal_cmd.aim_y = chosen_aim_pose.position.y();
   gimbal_cmd.aim_z = chosen_aim_pose.position.z();
   //  change of angle
-  gimbal_cmd.yaw_diff = atan(tan(-(hit_aim_info.yaw-cur_yaw_)) * cos(cur_roll_) - (sin(cur_roll_) * tan(hit_aim_info.pitch-cur_pitch_)) / cos(-(hit_aim_info.yaw-cur_yaw_)));
-  gimbal_cmd.pitch_diff = asin(sin(hit_aim_info.pitch-cur_pitch_) * cos(cur_roll_) + sin(-(hit_aim_info.yaw-cur_yaw_)) * cos(hit_aim_info.pitch-cur_pitch_) * sin(cur_roll_));
+  ChangeOfAngle(hit_aim_info, cur_yaw_, cur_pitch_, cur_roll_, gimbal_cmd.yaw_diff, gimbal_cmd.pitch_diff);
+  // gimbal_cmd.yaw_diff = hit_aim_info.yaw - cur_yaw_;//atan(tan(-(hit_aim_info.yaw-cur_yaw_)) * cos(cur_roll_) - (sin(cur_roll_) * tan(hit_aim_info.pitch-cur_pitch_)) / cos(-(hit_aim_info.yaw-cur_yaw_)));
+  // gimbal_cmd.pitch_diff = - (hit_aim_info.pitch - cur_pitch_);//asin(sin(hit_aim_info.pitch-cur_pitch_) * cos(cur_roll_) + sin(-(hit_aim_info.yaw-cur_yaw_)) * cos(hit_aim_info.pitch-cur_pitch_) * sin(cur_roll_));
   // 加上开火延迟（拨弹延迟等）用于火控
   dt += ReceiveToFireDelay_;
 
@@ -318,6 +319,26 @@ double Solver::MonoDirectionalAirResistanceModel(const double &s, const double &
 double Solver::AngleToGimbalX(const double &yaw, const double &cur_yaw)
 {
   return std::atan2(std::sin(yaw - cur_yaw), std::cos(yaw - cur_yaw));
+}
+
+void Solver::ChangeOfAngle(const HitInfo &Hit_info,
+                            const double &Cur_yaw_,
+                            const double &Cur_pitch_,
+                            const double &Cur_roll_,
+                            double &gimbal_cmd_yaw_diff
+                            double &gimbal_cmd_pitch_diff
+                          )
+{
+  gimbal_cmd_yaw_diff = std::atan2(
+    std::sin(Hit_info.yaw - Cur_yaw_) * std::cos(Cur_roll_) -
+    std::tan(Hit_info.pitch - Cur_pitch_) * std::sin(Cur_roll_),
+    std::cos(Hit_info.yaw - Cur_yaw_)
+  );
+
+  gimbal_cmd_pitch_diff = std::asin(
+    std::sin(Hit_info.pitch - Cur_pitch_) * std::cos(Cur_roll_) +
+    std::cos(Hit_info.pitch - Cur_pitch_) * std::sin(Hit_info.yaw - Cur_yaw_) * std::sin(Cur_roll_)
+  );
 }
 
 void Solver::GetBestPose(const auto_aim_interfaces::msg::Target &target,
