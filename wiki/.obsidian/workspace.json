@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/aaa.md",
+                "file": "yasi/口语/专有词.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "aaa"
+              "title": "专有词"
             }
           }
         ]
@@ -171,8 +171,12 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "34fd9bae490f75a0",
+  "active": "57844fbb348e54aa",
   "lastOpenFiles": [
+    "yasi/作文",
+    "yasi/口语/素材.md",
+    "yasi/口语/专有词.md",
+    "tmp/aaa.md",
     "概统/概统.md",
     "概统/_sub/集合运算.md",
     "高数/_sub/特征方程法.md",
