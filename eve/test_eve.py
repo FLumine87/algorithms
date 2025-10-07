@@ -16,15 +16,27 @@ class component_eve:
 #类参数应该包含时间戳
 
 def main():
-    def HotKeyEsc():
-        running = False
-    
-    running = True
-    keyboard.add_hotkey('esc', HotKeyEsc)
+    '''
+    main函数本质是状态机
 
-    while running:
-        pass
-    #没想好调用逻辑是什么
+    esc：退出
+    1：Autopliot
+    '''
+    print("How are you feeling, pliot")
+    print("esc：退出")
+    print("1：Autopliot")
+
+    ct = 0
+
+    while ct<=5:
+        a = input()
+        if a == "esc": break
+        elif a == "1": break
+        else :
+            ct+=1
+            print("Invaild command")
+
+    return 0
 
 
 try:
