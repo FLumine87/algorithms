@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "概统/_sub/条件概率.md",
+                "file": "概统/_sub/排列（P）、组合（C）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "条件概率"
+              "title": "排列（P）、组合（C）"
             }
           }
         ]
@@ -173,8 +173,9 @@
   },
   "active": "57844fbb348e54aa",
   "lastOpenFiles": [
-    "概统/概统.md",
+    "概统/_img/Pasted image 20251020170517.png",
     "概统/_sub/条件概率.md",
+    "概统/概统.md",
     "概统/_sub/排列（P）、组合（C）.md",
     "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
     "概统/_sub/集合运算.md",

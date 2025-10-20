@@ -1,3 +1,7 @@
+![[Pasted image 20251020170517.png]]
+
+注：排列的英文是 Permutation 或者 Arrangement，因此在数学符号中，用 P 或者 A 表示都可以
+
 ### 二、计算公式与推导
 
 #### 1. 排列
