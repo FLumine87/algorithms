@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4c1f79bc554b1b98",
+        "id": "e529f223ccf89c92",
         "type": "tabs",
         "children": [
           {
-            "id": "34fd9bae490f75a0",
+            "id": "d94810b039d858a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "概统/_sub/排列（P）、组合（C）.md",
+                "file": "yasi/_sub/地理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "排列（P）、组合（C）"
+              "title": "地理"
             }
           }
         ]
@@ -171,17 +171,20 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "57844fbb348e54aa",
+  "active": "d94810b039d858a0",
   "lastOpenFiles": [
+    "yasi/口语/专有词.md",
+    "yasi/_sub/环境.md",
+    "yasi/_sub/地理.md",
+    "yasi/口语/短语.md",
+    "yasi/口语/素材.md",
+    "概统/_sub/排列（P）、组合（C）.md",
     "概统/_img/Pasted image 20251020170517.png",
     "概统/_sub/条件概率.md",
     "概统/概统.md",
-    "概统/_sub/排列（P）、组合（C）.md",
     "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
     "概统/_sub/集合运算.md",
-    "yasi/口语/专有词.md",
     "yasi/作文",
-    "yasi/口语/素材.md",
     "tmp/aaa.md",
     "高数/_sub/特征方程法.md",
     "高数/_sub/😫常微分方程求解.md",
