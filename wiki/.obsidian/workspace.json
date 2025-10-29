@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "dc6ecc5c57c4c416",
@@ -94,8 +95,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "概统/第一章.md",
-                "collapseAll": false,
+                "file": "概统/_sub/随机变量与概率分布.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第一章 的反向链接列表"
+              "title": "随机变量与概率分布 的反向链接列表"
             }
           },
           {
@@ -142,21 +143,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "概统/第一章.md",
+                "file": "概统/_sub/随机变量与概率分布.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第一章 的大纲"
+              "title": "随机变量与概率分布 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,16 +172,16 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "57844fbb348e54aa",
+  "active": "b14496edcdce5439",
   "lastOpenFiles": [
     "概统/概统.md",
+    "概统/_sub/排列（P）、组合（C）.md",
     "概统/_sub/随机变量与概率分布.md",
     "yasi/_sub/地理.md",
     "yasi/口语/专有词.md",
     "yasi/_sub/环境.md",
     "yasi/口语/短语.md",
     "yasi/口语/素材.md",
-    "概统/_sub/排列（P）、组合（C）.md",
     "概统/_img/Pasted image 20251020170517.png",
     "概统/_sub/条件概率.md",
     "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
