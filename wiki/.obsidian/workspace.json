@@ -13,15 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
+                "file": "yasi/口语/专有词.md",
+=======
                 "file": "概统/_sub/随机变量与概率分布.md",
+>>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
+              "title": "专有词"
+            }
+          },
+          {
+            "id": "8a90dea3a3c0d3be",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "yasi/_sub/增长.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "增长"
+=======
               "title": "随机变量与概率分布"
+>>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -174,6 +197,12 @@
   },
   "active": "b14496edcdce5439",
   "lastOpenFiles": [
+<<<<<<< HEAD
+    "yasi/作文/作文.md",
+    "yasi/_sub/增长.md",
+    "yasi/口语/专有词.md",
+    "yasi/作文",
+=======
     "概统/概统.md",
     "概统/_sub/排列（P）、组合（C）.md",
     "概统/_sub/随机变量与概率分布.md",
@@ -181,7 +210,21 @@
     "yasi/口语/专有词.md",
     "yasi/_sub/环境.md",
     "yasi/口语/短语.md",
+>>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
     "yasi/口语/素材.md",
+<<<<<<< HEAD
+=======
+    "yasi/口语/短语.md",
+    "yasi/_sub/yasi.md",
+    "yasi/_sub/运动.md",
+    "yasi/_sub/de44a48d4c8e2536a27470628faa769a.png",
+    "yasi/_sub/学习.md",
+    "yasi/_sub/雅思备考素材与笔记.md",
+    "yasi/_sub/文化.md",
+    "yasi/_sub/地理.md",
+    "yasi/_sub/环境.md",
+    "概统/_sub/排列（P）、组合（C）.md",
+>>>>>>> 854f63b2ee1ae2df6227e96c3422f8093224472d
     "概统/_img/Pasted image 20251020170517.png",
     "概统/_sub/条件概率.md",
     "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
