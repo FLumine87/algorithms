@@ -1,64 +1,41 @@
 {
   "main": {
-    "id": "a4c5dec877976953",
+    "id": "a4483a5458f3b6e7",
     "type": "split",
     "children": [
       {
-        "id": "41aca3128992c2fa",
+        "id": "9cff26e17eacd9e8",
         "type": "tabs",
         "children": [
           {
-            "id": "b14496edcdce5439",
+            "id": "08c872c5faf88d2c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
-                "file": "yasi/口语/专有词.md",
-=======
                 "file": "概统/_sub/随机变量与概率分布.md",
->>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-<<<<<<< HEAD
-              "title": "专有词"
-            }
-          },
-          {
-            "id": "8a90dea3a3c0d3be",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "yasi/_sub/增长.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "增长"
-=======
               "title": "随机变量与概率分布"
->>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "7669dae95c99fe59",
+    "id": "524cdd21813ac4cd",
     "type": "split",
     "children": [
       {
-        "id": "8a715a9c74b5209c",
+        "id": "64c5805315b74537",
         "type": "tabs",
         "children": [
           {
-            "id": "57844fbb348e54aa",
+            "id": "0ebae5ec2f490b00",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -71,7 +48,7 @@
             }
           },
           {
-            "id": "17922497046a9399",
+            "id": "b93563d8b30a6499",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -88,7 +65,7 @@
             }
           },
           {
-            "id": "033a3f3daa0d72c5",
+            "id": "f7d2d42477ca5bf1",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -105,21 +82,21 @@
     "collapsed": true
   },
   "right": {
-    "id": "dc6ecc5c57c4c416",
+    "id": "e626321d961840b5",
     "type": "split",
     "children": [
       {
-        "id": "a17fc607a72fdd69",
+        "id": "6b5dca73d6b9d4e3",
         "type": "tabs",
         "children": [
           {
-            "id": "e94498c096fe2b86",
+            "id": "4cf9f785e9b30dc2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
                 "file": "概统/_sub/随机变量与概率分布.md",
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -132,21 +109,21 @@
             }
           },
           {
-            "id": "680050f8d238475b",
+            "id": "384175b5638bcaac",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "概统/第一章.md",
+                "file": "概统/_sub/随机变量与概率分布.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第一章 的出链列表"
+              "title": "随机变量与概率分布 的出链列表"
             }
           },
           {
-            "id": "785217af571576fe",
+            "id": "25ecda4b60bb2479",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -161,7 +138,7 @@
             }
           },
           {
-            "id": "5aed99ac8b1173eb",
+            "id": "17d47a52b82f96a0",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -195,47 +172,8 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "b14496edcdce5439",
+  "active": "08c872c5faf88d2c",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "yasi/作文/作文.md",
-    "yasi/_sub/增长.md",
-    "yasi/口语/专有词.md",
-    "yasi/作文",
-=======
-    "概统/概统.md",
-    "概统/_sub/排列（P）、组合（C）.md",
-    "概统/_sub/随机变量与概率分布.md",
-    "yasi/_sub/地理.md",
-    "yasi/口语/专有词.md",
-    "yasi/_sub/环境.md",
-    "yasi/口语/短语.md",
->>>>>>> 41dc8d94171aa79224b758d8ce5c85b38f53d8c4
-    "yasi/口语/素材.md",
-<<<<<<< HEAD
-=======
-    "yasi/口语/短语.md",
-    "yasi/_sub/yasi.md",
-    "yasi/_sub/运动.md",
-    "yasi/_sub/de44a48d4c8e2536a27470628faa769a.png",
-    "yasi/_sub/学习.md",
-    "yasi/_sub/雅思备考素材与笔记.md",
-    "yasi/_sub/文化.md",
-    "yasi/_sub/地理.md",
-    "yasi/_sub/环境.md",
-    "概统/_sub/排列（P）、组合（C）.md",
->>>>>>> 854f63b2ee1ae2df6227e96c3422f8093224472d
-    "概统/_img/Pasted image 20251020170517.png",
-    "概统/_sub/条件概率.md",
-    "概统/_img/e75a4b294b543ac9c5c9393a162dd0c.jpg",
-    "概统/_sub/集合运算.md",
-    "yasi/作文",
-    "tmp/aaa.md",
-    "高数/_sub/特征方程法.md",
-    "高数/_sub/😫常微分方程求解.md",
-    "高数/_sub/积分因子.md",
-    "高数/📖wiki_高数🔢.md",
-    "高数/_sub/1.md",
-    "概统/_sub"
+    "概统/概统.md"
   ]
 }
