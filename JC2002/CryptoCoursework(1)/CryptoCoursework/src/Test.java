@@ -2,9 +2,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- * Author: Marco A. Palomino
+ * Author: Hao Gu
  * Course: JC2002
- * Date: 3 October 2025
+ * Date: 13 November 2025
  * <p>
  * Description: A number of methods to test the implementation of
  *              the Caesar Cipher.
@@ -43,16 +43,16 @@ public class Test {
 
         // Read a text file and keep the contents in a String called
         // message!
-        String message = ...
+        //String message = ...
 
         // Create a CaesarBreaker object.
-        CaesarBreaker cb = ...
+        //CaesarBreaker cb = ...
 
         // Decrypt the message!
-        String decrypted = ...
+        //String decrypted = ...
 
         // Print out the decrypted file on the screen!
-        ...
+        //...
     } // End of testCaesarDecryptFile(fileName)
 
 
@@ -71,7 +71,7 @@ public class Test {
 
         // Read a text file and keep the contents in a String called
         // message!
-        String message = new String(Files.readAllBytes(Paths.get(fileName)));//不知道是否正确
+        String message = new String(Files.readAllBytes(Paths.get(fileName)), java.nio.charset.StandardCharsets.UTF_8);//不知道是否正确
 
         // Encrypt the contents of the file!
         String encrypted = cc.encrypt(message);
@@ -91,16 +91,16 @@ public class Test {
      */
     public static void testCaesarMultipleKeysString(String message) {
         // First, choose your keys.
-        int[] keys = ...
+        //int[] keys = ...
 
         // Then, create a new CaesarCipherMultipleKeys object with such keys.
-        CaesarCipherMultipleKeys ccmk = ...
+        //CaesarCipherMultipleKeys ccmk = ...
 
         // Encrypt the given String!
-        ...
+        //...
 
         // Print out the encrypted String!
-        ...
+        //...
 
     } // End of testCaesarMultipleKeysString(message)
 } // End of class Test
