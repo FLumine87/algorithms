@@ -28,8 +28,8 @@ public class CaesarCipher {
      */
     public CaesarCipher(int key) {
 
-        key = ((key % 26) + 26) % 26;
         theKey = key;//这里我暂时不清楚谁先谁后
+        key = ((key % 26) + 26) % 26;
 
         alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         shiftedAlphabet = alphabet.substring(26 - key) + alphabet.substring(0, 26 - key);             
@@ -38,7 +38,7 @@ public class CaesarCipher {
         // encryption works with all letters (both uppercase and
         // lowercase). But do not change anything here until you reach
         // Task 4.
-        //...
+        //我不见得需要改这里，因为我在encrypt方法里处理了大小写问题
 
     } // End of CaesarCipher(int key)
 
