@@ -43,16 +43,16 @@ public class Test {
 
         // Read a text file and keep the contents in a String called
         // message!
-        //String message = ...
+        String message = new String(Files.readAllBytes(Paths.get(fileName)), java.nio.charset.StandardCharsets.UTF_8);//不知道是否正确
 
         // Create a CaesarBreaker object.
-        //CaesarBreaker cb = ...
+        CaesarBreaker cb = new CaesarBreaker();
 
         // Decrypt the message!
-        //String decrypted = ...
+        String decrypted = cb.decrypt(message);
 
         // Print out the decrypted file on the screen!
-        //...
+        System.out.println(decrypted);
     } // End of testCaesarDecryptFile(fileName)
 
 
@@ -91,16 +91,16 @@ public class Test {
      */
     public static void testCaesarMultipleKeysString(String message) {
         // First, choose your keys.
-        //int[] keys = ...
+        int[] keys = {23, 17};
 
         // Then, create a new CaesarCipherMultipleKeys object with such keys.
-        //CaesarCipherMultipleKeys ccmk = ...
+        CaesarCipherMultipleKeys ccmk = new CaesarCipherMultipleKeys(keys);
 
         // Encrypt the given String!
-        //...
+        String encrypted = ccmk.encryptWithMultipleKeys(message);
 
         // Print out the encrypted String!
-        //...
+        System.out.println(encrypted);
 
     } // End of testCaesarMultipleKeysString(message)
 } // End of class Test

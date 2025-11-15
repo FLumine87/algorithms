@@ -32,7 +32,8 @@ public class CaesarCipher {
         key = ((key % 26) + 26) % 26;
 
         alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        shiftedAlphabet = alphabet.substring(26 - key) + alphabet.substring(0, 26 - key);             
+        shiftedAlphabet = alphabet.substring(26 - key) + 
+                        alphabet.substring(0, 26 - key);             
 
         // In Task 4, you will need to make changes to ensure that the
         // encryption works with all letters (both uppercase and
@@ -55,7 +56,7 @@ public class CaesarCipher {
 
         // Starting from 0, and all the way to the length of the
         // message, encrypt one by one each character.
-        for (int i = 0; i < message.length(); i++) {
+        for (int i = 0; i < message.length(); ++i) {
 
             // Consider the i-th character of the message (call it
             // currentChar)

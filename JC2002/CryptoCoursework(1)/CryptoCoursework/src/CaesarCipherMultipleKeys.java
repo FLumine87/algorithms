@@ -46,7 +46,7 @@ public class CaesarCipherMultipleKeys {
 
         // Ensure that the encryption works with all letters (both
         // uppercase and lowercase).
-        for (int i = 0; i < keys.length; i++) {
+        for (int i = 0; i < keys.length; ++i) {
             int key = ((keys[i] % 26) + 26) % 26;
             String shifted = alphabet.substring(26 - key) + 
                             alphabet.substring(0, 26 - key);
@@ -74,7 +74,7 @@ public class CaesarCipherMultipleKeys {
 
         // Starting from 0, and all the way to the length of the
         // message, encrypt one by one each character.
-        for (int i = 0; i < message.length(); i++) {
+        for (int i = 0; i < message.length(); ++i) {
 
             // Consider the i-th character of the message (call it
             // currentChar)
