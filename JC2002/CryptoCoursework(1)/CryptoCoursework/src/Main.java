@@ -20,7 +20,7 @@ public class Main {
             tester.testCaesarFile("titus_small_uppercase.txt");
             System.out.println();
 
-            tester.testCaesarDecryptFile("text_with_many_es.txt");
+            tester.testCaesarDecryptFile("encrypted_text_with_many_es.txt");
 
         } catch (Exception e) {
             throw new RuntimeException(e);

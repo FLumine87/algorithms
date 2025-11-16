@@ -140,9 +140,9 @@ public class CaesarBreaker {
         //
         // The following is an optimised implementation:
         //
-        // int key = (maximum - 4 + 26) % 26;
+        // int key = (maximum - 4 + 26) % 26;//我不知道这里是谁写的
         //
-        int key = (maximum - 4 + 26) % 26;
+        int key = (4 - maximum + 26) % 26;
 
         // Return the key!
         return key;
