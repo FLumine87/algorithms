@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithms/算法库.md",
+                "file": "algorithms/算法基础/排序/排序.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "算法库"
+              "title": "排序"
             }
           }
         ],
@@ -188,6 +188,7 @@
   },
   "active": "5dfa8c7c867cfc3d",
   "lastOpenFiles": [
+    "algorithms/算法库.md",
     "algorithms/算法基础/排序/排序.md",
     "algorithms/LOG.md",
     "概统/_sub/概率与分布.md",
