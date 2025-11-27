@@ -96,7 +96,7 @@
               "type": "backlink",
               "state": {
                 "file": "概统/_sub/概率与分布.md",
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -152,12 +152,12 @@
               "title": "概率与分布 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,11 +172,11 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "5dfa8c7c867cfc3d",
+  "active": "c9562a592dbf20bb",
   "lastOpenFiles": [
-    "algorithms/数据结构/basic_data_structure.md",
-    "概统/_sub/概率与分布.md",
     "概统/概统.md",
+    "概统/_sub/概率与分布.md",
+    "algorithms/数据结构/basic_data_structure.md",
     "algorithms/算法基础/排序/排序.md",
     "algorithms/算法库.md",
     "algorithms/LOG.md",
