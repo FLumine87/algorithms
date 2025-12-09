@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "概统/_sub/联合概率分布与随机样本.md",
+                "file": "JC系列/_sub/JC2002.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "联合概率分布与随机样本"
+              "title": "JC2002"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "0e72131bed72e8d6",
@@ -174,8 +175,10 @@
   },
   "active": "5dfa8c7c867cfc3d",
   "lastOpenFiles": [
-    "概统/概统.md",
+    "JC系列/💻wiki_JC.md",
+    "JC系列/_sub/JC2002.md",
     "概统/_sub/联合概率分布与随机样本.md",
+    "概统/概统.md",
     "概统/_sub/概率与分布.md",
     "algorithms/数据结构/basic_data_structure.md",
     "algorithms/算法基础/排序/排序.md",
