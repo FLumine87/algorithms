@@ -38,3 +38,18 @@
 # 1 → 5 (18)
 # The Total Weight of minimum spanning tree: 53
 
+# P5. Given the following graph, run Dijkstra’s Algorithm to find the shortest path from 
+# A to H. P
+
+# P6. Find the shortest path from A to C. 
+
+# answer:
+# A → B → F → C (6)
+
+# P7. Given the following graph, run Dijkstra’s Algorithm to find the shortest path from 
+# s to e. 
+
+# P8. Find the shortest path from s to c. 
+
+# answer:
+# s → a → c (3)
