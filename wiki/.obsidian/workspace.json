@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "0e72131bed72e8d6",
@@ -174,10 +175,11 @@
   },
   "active": "4fff4c79fb79b9b6",
   "lastOpenFiles": [
-    "yasi/_sub/人文.md",
-    "yasi/口语/专有词.md",
     "yasi/口语/短语.md",
     "yasi/口语/素材.md",
+    "yasi/口语/专有词.md",
+    "yasi/_sub/旅游.md",
+    "yasi/_sub/人文.md",
     "概统/_sub/点估计.md",
     "概统/概统.md",
     "概统/_sub/联合概率分布与随机样本.md",
