@@ -4,53 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "e0eda7f80d35ec60",
+        "id": "56375b55a15981a7",
         "type": "tabs",
         "children": [
           {
-            "id": "9234fa238bf6aaf3",
+            "id": "0686368f1e25f420",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithms/数据结构/容器/list.md",
+                "file": "algorithms/数据结构/树.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "list"
+              "title": "树"
             }
           },
           {
-            "id": "207468dd8b81542a",
+            "id": "70335cbf0fd45d2e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithms/内置函数（库）速查表_py/栈操作-py.md",
+                "file": "algorithms/数据结构/堆/二叉堆.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "栈操作-py"
-            }
-          },
-          {
-            "id": "6c89f4a1fefb9a9a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "algorithms/内置函数（库）速查表_py/队列操作-py.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "队列操作-py"
+              "title": "二叉堆"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JC系列/_sub/JC2001.md",
+                "file": "algorithms/数据结构/堆/二叉堆.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "JC2001 的大纲"
+              "title": "二叉堆 的大纲"
             }
           }
         ],
@@ -201,12 +187,23 @@
       "obsidian-kanban:创建新看板": false
     }
   },
-  "active": "3706c78cfc3c6c73",
+  "active": "70335cbf0fd45d2e",
   "lastOpenFiles": [
-    "algorithms/内置函数（库）速查表_py/栈操作-py.md",
+    "树堆treap.md",
+    "algorithms/数据结构/堆/二叉堆.md",
+    "algorithms/数据结构/树.md",
+    "algorithms/数据结构/堆/堆简介.md",
+    "algorithms/数据结构/堆",
+    "algorithms/内置函数（库）速查表_py/优先队列操作-py.md",
     "algorithms/内置函数（库）速查表_py/队列操作-py.md",
-    "algorithms/数据结构/容器/list.md",
+    "algorithms/数据结构/队列.md",
     "algorithms/数据结构/链表.md",
+    "algorithms/内置函数（库）速查表_py/栈操作-py.md",
+    "algorithms/_img/Pasted image 20251230172733.png",
+    "algorithms/_img/Pasted image 20251230172659.png",
+    "tree-binary-perfect.svg",
+    "algorithms/_img/Pasted image 20251230170254.png",
+    "algorithms/数据结构/容器/list.md",
     "algorithms/_img/Pasted image 20251229215502.png",
     "algorithms/_img/Pasted image 20251229215207.png",
     "algorithms/_img/Pasted image 20251229214358.png",
@@ -228,15 +225,9 @@
     "algorithms/内置函数（库）速查表/内存管理函数（cstdlib）.md",
     "algorithms/内置函数（库）速查表/算法函数（algorithm）.md",
     "algorithms/内置函数（库）速查表/C风格字符串函数（cstring）.md",
-    "algorithms/内置函数（库）速查表_py/数组操作-py.md",
-    "algorithms/内置函数（库）速查表/数组操作.md",
     "algorithms/内置函数（库）速查表_py",
     "algorithms/内置函数（库）速查表",
-    "algorithms/语言基础/指针.md",
     "algorithms/语言基础",
-    "algorithms/数据结构/指针问题.md",
-    "tmp/aaa.md",
-    "algorithms/算法库.md",
     "algorithms/算法基础/排序"
   ]
 }
